@@ -21,6 +21,7 @@ function WeddingContent() {
   const rawGuest = searchParams.get('guest');
   const [guestName, setGuestName] = useState('');
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const audioRef = useRef(null);
 
   const [modalData, setModalData] = useState({
@@ -47,6 +48,7 @@ function WeddingContent() {
   const handleReopenEnvelope = (e) => {
     e.preventDefault();
     setEnvelopeOpen(false);
+    setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -75,6 +77,10 @@ function WeddingContent() {
     setModalData((prev) => ({ ...prev, isOpen: false }));
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
       {/* Falling Rose Petals Canvas */}
@@ -92,11 +98,12 @@ function WeddingContent() {
 
       {/* Top Navigation Bar */}
       <header className="top-nav-bar">
-        <a href="#hero" className="nav-brand">
+        <a href="#hero" className="nav-brand" onClick={closeMobileMenu}>
           <div className="nav-monogram-circle">AR</div>
           <span className="nav-hashtag">#RitKaAdi</span>
         </a>
 
+        {/* Desktop Links */}
         <ul className="nav-links">
           <li><a href="#hero" className="nav-link">Home</a></li>
           <li><a href="#scratch-card" className="nav-link">Reveal Date</a></li>
@@ -109,16 +116,41 @@ function WeddingContent() {
           <li><a href="#guestbook" className="nav-link">Blessings</a></li>
         </ul>
 
+        {/* Right Controls: Envelope Replay & Mobile Toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <button
             onClick={handleReopenEnvelope}
-            className="nav-link"
-            style={{ border: '1px solid var(--color-gold)', background: 'transparent', cursor: 'pointer' }}
+            className="nav-envelope-btn"
+            title="Replay Envelope Opening"
           >
-            ✉️ Envelope
+            ✉️ <span className="nav-envelope-text">Envelope</span>
+          </button>
+
+          <button
+            type="button"
+            className="mobile-nav-toggle-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Mobile Navigation"
+          >
+            {mobileMenuOpen ? '✕' : '☰'}
           </button>
         </div>
       </header>
+
+      {/* Mobile Slide-Down Navigation Drawer */}
+      <div className={`mobile-nav-drawer ${mobileMenuOpen ? 'drawer-open' : ''}`}>
+        <ul className="mobile-nav-list">
+          <li><a href="#hero" className="mobile-nav-item" onClick={closeMobileMenu}>🏠 Home</a></li>
+          <li><a href="#scratch-card" className="mobile-nav-item" onClick={closeMobileMenu}>🎟️ Reveal Date (Scratch)</a></li>
+          <li><a href="#couple" className="mobile-nav-item" onClick={closeMobileMenu}>💑 The Royal Couple</a></li>
+          <li><a href="#invitation" className="mobile-nav-item" onClick={closeMobileMenu}>📜 Sacred Invitation</a></li>
+          <li><a href="#events" className="mobile-nav-item" onClick={closeMobileMenu}>📅 Wedding Programme & Maps</a></li>
+          <li><a href="#bal-manuhaar" className="mobile-nav-item" onClick={closeMobileMenu}>🧒 Bal Manuhaar</a></li>
+          <li><a href="#lookbook" className="mobile-nav-item" onClick={closeMobileMenu}>📖 Original Printed Card</a></li>
+          <li><a href="#honor-roll" className="mobile-nav-item" onClick={closeMobileMenu}>📞 Family Contacts & RSVP</a></li>
+          <li><a href="#guestbook" className="mobile-nav-item" onClick={closeMobileMenu}>✍️ Send Blessings</a></li>
+        </ul>
+      </div>
 
       {/* Main Content Layout */}
       <main className="main-wrapper">

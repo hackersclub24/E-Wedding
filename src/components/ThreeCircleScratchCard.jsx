@@ -211,6 +211,9 @@ export default function ThreeCircleScratchCard({ onAllRevealed }) {
 
   const handleMove = (idx, e) => {
     if (activeCanvasIdx !== idx) return;
+    if (e.cancelable) {
+      e.preventDefault();
+    }
     const pos = getCanvasPos(canvasRefs[idx].current, e);
     scratchCircle(idx, pos.x, pos.y, pos.screenX, pos.screenY);
   };
