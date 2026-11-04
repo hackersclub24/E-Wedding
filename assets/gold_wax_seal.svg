@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">\n<defs>\n
+  <!-- Base Wax Drop Shadow -->
+  <filter id="wax-shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#4a2e05" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+  </filter>
+
+  <!-- 3D Convex Bevel Filter for Wax Rim -->
+  <filter id="gold-bevel" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="-2" dy="-2" stdDeviation="2" flood-color="#fff5cc" flood-opacity="0.9"/>
+    <feDropShadow dx="3" dy="4" stdDeviation="3" flood-color="#543707" flood-opacity="0.6"/>
+  </filter>
+
+  <!-- Gold Ring Gradient -->
+  <radialGradient id="gold-rim-grad" cx="35%" cy="30%" r="65%">
+    <stop offset="0%" stop-color="#fff6cc"/>
+    <stop offset="20%" stop-color="#f5d061"/>
+    <stop offset="45%" stop-color="#d49b28"/>
+    <stop offset="70%" stop-color="#966312"/>
+    <stop offset="90%" stop-color="#cca03b"/>
+    <stop offset="100%" stop-color="#734707"/>
+  </radialGradient>
+
+  <!-- Inner Disc Sunburst / Radial Gold -->
+  <radialGradient id="gold-inner-grad" cx="42%" cy="38%" r="60%">
+    <stop offset="0%" stop-color="#fcedb4"/>
+    <stop offset="35%" stop-color="#e2ab3c"/>
+    <stop offset="75%" stop-color="#ab7418"/>
+    <stop offset="100%" stop-color="#80500a"/>
+  </radialGradient>
+
+  <!-- Embossed Monogram Gold Highlight -->
+  <linearGradient id="emboss-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#fff9e0"/>
+    <stop offset="50%" stop-color="#e8b446"/>
+    <stop offset="100%" stop-color="#734807"/>
+  </linearGradient>
+
+  <filter id="emboss-engrave" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="-1" dy="-1" stdDeviation="0.8" flood-color="#ffffff" flood-opacity="0.85"/>
+    <feDropShadow dx="1.5" dy="2" stdDeviation="1" flood-color="#472a03" flood-opacity="0.7"/>
+  </filter>
+\n</defs>\n<g filter="url(#wax-shadow)">\n<polygon points="290.85,150.00 291.92,157.44 292.22,164.95 291.71,172.45 290.39,179.84 288.32,187.06 285.57,194.05 282.27,200.77 278.55,207.23 274.53,213.45 270.32,219.47 266.00,225.33 261.60,231.08 257.13,236.75 252.54,242.33 247.78,247.78 242.79,253.05 237.49,258.04 231.85,262.66 225.85,266.80 219.50,270.37 212.83,273.30 205.91,275.57 198.82,277.19 191.66,278.21 184.49,278.71 177.38,278.79 170.37,278.58 163.47,278.18 156.69,277.68 150.00,277.13 143.37,276.56 136.76,275.96 130.16,275.28 123.54,274.46 116.92,273.44 110.31,272.14 103.74,270.52 97.23,268.52 90.82,266.15 84.52,263.41 78.35,260.32 72.32,256.92 66.41,253.23 60.62,249.27 54.94,245.06 49.39,240.59 44.00,235.84 38.82,230.78 33.92,225.38 29.39,219.64 25.32,213.53 21.80,207.08 18.90,200.32 16.68,193.32 15.12,186.14 14.22,178.86 13.88,171.56 14.03,164.29 14.53,157.10 15.28,150.00 16.16,142.99 17.09,136.03 18.05,129.10 19.03,122.16 20.08,115.19 21.29,108.18 22.75,101.15 24.58,94.16 26.90,87.28 29.78,80.59 33.26,74.19 37.36,68.16 42.04,62.57 47.22,57.45 52.80,52.80 58.69,48.59 64.77,44.75 70.96,41.21 77.18,37.86 83.40,34.65 89.63,31.51 95.87,28.43 102.17,25.41 108.57,22.50 115.11,19.80 121.81,17.39 128.68,15.39 135.70,13.90 142.82,12.99 150.00,12.71 157.18,13.07 164.29,14.05 171.29,15.59 178.14,17.63 184.81,20.07 191.31,22.85 197.64,25.90 203.80,29.17 209.80,32.64 215.64,36.30 221.32,40.18 226.80,44.29 232.06,48.66 237.07,53.30 241.80,58.20 246.23,63.35 250.37,68.72 254.23,74.27 257.87,79.95 261.32,85.73 264.67,91.57 267.97,97.48 271.25,103.46 274.54,109.53 277.82,115.75 281.01,122.15 284.04,128.77 286.78,135.62 289.10,142.71" fill="url(#gold-rim-grad)"/>\n<circle cx="150" cy="150" r="128" fill="none" stroke="#754b09" stroke-width="3" opacity="0.6"/>\n<circle cx="148" cy="148" r="126" fill="none" stroke="#fff8d1" stroke-width="2" opacity="0.8"/>\n<circle cx="150" cy="150" r="105" fill="url(#gold-inner-grad)" filter="url(#wax-shadow)"/>\n<circle cx="150" cy="150" r="102" fill="none" stroke="#663e06" stroke-width="2.5" opacity="0.75"/>\n<circle cx="149" cy="149" r="100" fill="none" stroke="#fffae6" stroke-width="1.5" opacity="0.9"/>\n<circle cx="150" cy="150" r="95" fill="none" stroke="#996614" stroke-width="1" stroke-dasharray="2 3"/>\n<g filter="url(#emboss-engrave)">\n<path d="M 109.00000000000003 221.01408311032398 Q 107.66690347055084 212.86240475757177 106.33380694110166 204.71072640481952" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 97.29141600570378 212.8156443357562 Q 97.39409629887095 204.55631851091107 97.49677659203812 196.29699268606595" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 87.18435566424381 202.70858399429625 Q 88.71969289127817 194.5925661331256 90.25503011831253 186.47654827195493" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 78.98591688967602 191.0 Q 81.90726060585229 183.2738911983123 84.82860432202854 175.5477823966246" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 72.94520509555552 178.04565175270486 Q 77.16379175032888 170.94420591683968 81.38237840510224 163.84276008097453" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 69.24576425299894 164.23915056868827 Q 74.63341422557198 157.97814153686343 80.02106419814503 151.7171325050386" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 68.0 150.0 Q 74.39301227223851 144.76966536342405 80.78602454447703 139.53933072684808" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 69.24576425299894 135.7608494313117 Q 76.44989038203127 131.72011026123994 83.6540165110636 127.67937109116818" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 72.94520509555551 121.95434824729517 Q 80.74155135441472 119.22598035869757 88.53789761327393 116.49761247009997" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 78.98591688967603 109.0 Q 87.13759524242826 107.6669034705508 95.28927359518048 106.33380694110163" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 87.18435566424381 97.29141600570378 Q 95.44368148908893 97.39409629887095 103.70300731393407 97.49677659203812" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 97.29141600570377 87.18435566424381 Q 105.40743386687441 88.71969289127817 113.52345172804507 90.25503011831253" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 191.0 78.98591688967603 Q 183.2738911983123 81.90726060585229 175.5477823966246 84.82860432202854" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 202.70858399429622 87.18435566424381 Q 194.59256613312556 88.71969289127817 186.47654827195493 90.25503011831253" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 212.8156443357562 97.29141600570378 Q 204.55631851091107 97.39409629887095 196.29699268606592 97.49677659203812" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 221.01408311032398 109.0 Q 212.86240475757177 107.66690347055082 204.71072640481952 106.33380694110164" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 227.0547949044445 121.95434824729517 Q 219.25844864558528 119.22598035869756 211.46210238672606 116.49761247009994" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 230.75423574700108 135.76084943131173 Q 223.55010961796873 131.72011026123994 216.34598348893638 127.67937109116818" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 232.0 150.0 Q 225.60698772776146 144.76966536342402 219.21397545552296 139.53933072684805" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 230.75423574700108 164.23915056868827 Q 225.36658577442802 157.97814153686343 219.97893580185496 151.7171325050386" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 227.0547949044445 178.04565175270483 Q 222.83620824967113 170.94420591683968 218.61762159489774 163.8427600809745" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 221.01408311032398 191.0 Q 218.0927393941477 183.2738911983123 215.17139567797147 175.5477823966246" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 212.8156443357562 202.70858399429622 Q 211.28030710872184 194.59256613312556 209.74496988168747 186.47654827195493" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<path d="M 202.70858399429622 212.8156443357562 Q 202.60590370112905 204.55631851091107 202.50322340796188 196.29699268606592" stroke="url(#emboss-gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>\n<g transform="translate(205,95) rotate(25)"><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(0)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(72)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(144)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(216)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(288)"/><circle cx="0" cy="0" r="2.52" fill="#fff4be"/></g>\n<g transform="translate(220,115) rotate(-10)"><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(0)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(72)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(144)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(216)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(288)"/><circle cx="0" cy="0" r="1.7999999999999998" fill="#fff4be"/></g>\n<g transform="translate(95,205) rotate(-20)"><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(0)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(72)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(144)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(216)"/><ellipse cx="0" cy="-7.700000000000001" rx="3.9200000000000004" ry="6.72" fill="url(#emboss-gold)" transform="rotate(288)"/><circle cx="0" cy="0" r="2.52" fill="#fff4be"/></g>\n<g transform="translate(80,185) rotate(45)"><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(0)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(72)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(144)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(216)"/><ellipse cx="0" cy="-5.5" rx="2.8000000000000003" ry="4.8" fill="url(#emboss-gold)" transform="rotate(288)"/><circle cx="0" cy="0" r="1.7999999999999998" fill="#fff4be"/></g>\n
+  <!-- Calligraphic Cursive Monogram -->
+  <g transform="translate(150, 150)">
+    <!-- Swash Ampersand & in center background -->
+    <text x="-4" y="10" 
+          font-family="'Playfair Display', 'Cinzel Decorative', 'Great Vibes', serif" 
+          font-size="44" 
+          font-style="italic" 
+          font-weight="300"
+          text-anchor="middle" 
+          fill="url(#emboss-gold)" 
+          opacity="0.85">&amp;</text>
+
+    <!-- Capital Letter A -->
+    <text x="-42" y="18" 
+          font-family="'Great Vibes', 'Alex Brush', 'Cinzel', cursive, serif" 
+          font-size="64" 
+          font-weight="600"
+          text-anchor="middle" 
+          fill="url(#emboss-gold)">A</text>
+
+    <!-- Capital Letter R -->
+    <text x="36" y="24" 
+          font-family="'Great Vibes', 'Alex Brush', 'Cinzel', cursive, serif" 
+          font-size="62" 
+          font-weight="600"
+          text-anchor="middle" 
+          fill="url(#emboss-gold)">R</text>
+
+    <!-- Hashtag below -->
+    <text x="0" y="55" 
+          font-family="'Cinzel', 'Cinzel Decorative', serif" 
+          font-size="11" 
+          font-weight="700" 
+          letter-spacing="2.5" 
+          text-anchor="middle" 
+          fill="url(#emboss-gold)">#RITKAADI</text>
+
+    <text x="0" y="70" 
+          font-family="'Cinzel', 'Cinzel Decorative', serif" 
+          font-size="9" 
+          font-weight="600" 
+          letter-spacing="1.5" 
+          text-anchor="middle" 
+          fill="url(#emboss-gold)">21 • 11 • 2026</text>
+  </g>
+\n</g>\n
+  <path d="M 60 70 Q 150 30 240 70 Q 150 55 60 70 Z" fill="#ffffff" opacity="0.35"/>
+  <ellipse cx="105" cy="85" rx="35" ry="12" transform="rotate(-30 105 85)" fill="#ffffff" opacity="0.4" filter="blur(3px)"/>
+\n</g>\n</svg>

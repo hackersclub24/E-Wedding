@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation | Aditya weds Ritika (#RitKaAdi)</title>
+    
+    <!-- Meta & Open Graph for WhatsApp & Social Previews -->
+    <meta name="description" content="Wedding Invitation of Aditya & Ritika (#RitKaAdi) on Saturday, 21st November 2026. Join us in celebrating this joyous occasion!">
+    <meta property="og:title" content="Aditya weds Ritika | Wedding Invitation (#RitKaAdi)">
+    <meta property="og:description" content="Cordially inviting you to the wedding ceremony of Aditya & Ritika on 21st November 2026. Tap to open your digital royal invitation.">
+    <meta property="og:image" content="assets/ghibli_couple.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#680e1b">
+
+    <!-- Google Fonts: Luxury Royal Serif & Cursive -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;800&family=Great+Vibes&family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Falling Rose Petals Canvas -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- ====================================================================
+         1. ROYAL 3D ENVELOPE OPENING OVERLAY (FOLDÈ SIGNATURE EXPERIENCE)
+         ==================================================================== -->
+    <!-- ====================================================================
+         1. LUXURY 3D ENVELOPE SPLASH SCREEN (MATCHING VIRAL VIDEO)
+         ==================================================================== -->
+    <div class="splash-overlay" id="envelope-overlay">
+        <div class="splash-ambient-glow"></div>
+
+        <div class="splash-envelope-phone-canvas" id="envelope-wrapper">
+            <!-- LAYER 1: Chamber & Sliding Wedding Card -->
+            <div class="envelope-interior-chamber">
+                <div class="envelope-interior-backing"></div>
+                
+                <div class="envelope-sliding-card" id="sliding-wedding-card">
+                    <div class="card-palace-arch-wrapper">
+                        <img src="assets/palace_arch_bells.svg" alt="Palace Arch & Bells" class="card-palace-arch-img">
+                    </div>
+
+                    <div class="card-shree-ganesh">॥ श्री गणेशाय नमः ॥</div>
+
+                    <div class="card-names-block">
+                        <span class="card-name">ADITYA</span>
+                        <span class="card-ampersand">&amp;</span>
+                        <span class="card-name">RITIKA</span>
+                    </div>
+
+                    <div class="card-event-badge">
+                        <span class="card-badge-line"></span>
+                        <span class="card-badge-text">WEDDING DAY</span>
+                        <span class="card-badge-line"></span>
+                    </div>
+                    <div class="card-save-date">• SAVE THE DATE •</div>
+
+                    <div class="card-ghibli-frame-container">
+                        <div class="card-ghibli-frame">
+                            <img src="assets/ghibli_couple.jpg" alt="Aditya & Ritika" class="card-ghibli-img">
+                        </div>
+                    </div>
+
+                    <div class="card-wedding-date-proclamation">Saturday, 21st November 2026</div>
+                    <div class="card-hashtag">#RitKaAdi</div>
+
+                    <div class="card-guest-greeting">
+                        <div class="card-guest-prefix">Cordially Invited</div>
+                        <div class="card-guest-name" id="envelope-guest-name">Respected Family & Friends</div>
+                    </div>
+
+                    <div class="card-palace-bottom-wrapper">
+                        <img src="assets/palace_bottom_decor.svg" alt="Palace Terrace & Elephant" class="card-palace-bottom-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- LAYER 2: Envelope Pocket Housing -->
+            <div class="envelope-pocket-housing">
+                <div class="envelope-embossed-bg"></div>
+                <div class="envelope-side-flap-left"></div>
+                <div class="envelope-side-flap-right"></div>
+                <div class="envelope-bottom-flap"></div>
+            </div>
+
+            <!-- LAYER 3: 3D Hinged Top Flap with Metallic Gold Foil Lining & Wax Seal -->
+            <div class="envelope-top-flap-3d" id="envelope-top-flap">
+                <div class="flap-face flap-front">
+                    <div class="flap-front-embossed-bg"></div>
+                    <div class="flap-v-shadow"></div>
+                </div>
+                <div class="flap-face flap-back">
+                    <div class="flap-gold-foil-bg"></div>
+                    <div class="flap-gold-shimmer"></div>
+                </div>
+
+                <!-- 3D Gold Wax Seal Component -->
+                <div class="wax-seal-component" id="wax-seal-btn" title="Tap Wax Seal to Open">
+                    <div class="wax-seal-pulse-halo"></div>
+                    <div class="wax-seal-disc">
+                        <img src="assets/gold_wax_seal.svg" alt="Gold Wax Seal" class="wax-seal-svg-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tap Hint -->
+            <div class="envelope-tap-instruction" id="envelope-tap-hint">
+                <div class="tap-pill">
+                    <span class="tap-sparkle">✨</span>
+                    <span>Tap Wax Seal to Open</span>
+                    <span class="tap-sparkle">✨</span>
+                </div>
+            </div>
+
+            <!-- Skip Button -->
+            <button type="button" class="splash-skip-button" id="splash-skip-btn">Enter Site →</button>
+        </div>
+    </div>
+
+    <header class="top-nav-bar">
+        <a href="#hero" class="nav-brand">
+            <div class="nav-monogram-circle">AR</div>
+            <span class="nav-hashtag">#RitKaAdi</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#couple" class="nav-link">The Couple</a></li>
+            <li><a href="#invitation" class="nav-link">Family</a></li>
+            <li><a href="#events" class="nav-link">Programme</a></li>
+            <li><a href="#bal-manuhaar" class="nav-link">Bal Manuhaar</a></li>
+            <li><a href="#lookbook" class="nav-link">Original Card</a></li>
+            <li><a href="#honor-roll" class="nav-link">RSVP</a></li>
+            <li><a href="#guestbook" class="nav-link">Blessings</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <button id="reopen-envelope-btn" class="nav-link" style="border: 1px solid var(--color-gold); background: transparent; cursor: pointer;">
+                ✉️ Envelope
+            </button>
+        </div>
+    </header>
+
+    <!-- ====================================================================
+         3. FLOATING MUSIC CONTROLLER
+         ==================================================================== -->
+    <div class="floating-audio-widget" id="music-widget">
+        <div class="vinyl-disc" id="music-toggle-btn" title="Play / Pause Wedding Shehnai Music">
+            <div class="vinyl-center"></div>
+        </div>
+        <div class="music-info" id="music-info-text">
+            <div class="music-title">
+                <span>Shehnai Raag</span>
+                <div class="equalizer-bars">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+            </div>
+            <span class="music-status" id="music-status-label">Tap to Play Music ♪</span>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         4. MAIN CONTENT CONTAINER
+         ==================================================================== -->
+    <main class="main-wrapper">
+
+        <!-- ================================================================
+             SECTION A: HERO PROCLAMATION & COUPLE SHOWCASE
+             ================================================================ -->
+        <section id="hero" class="royal-card hero-section">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <!-- Sacred Invocation -->
+            <div class="ganesha-header">
+                <img src="assets/kalash.png" alt="Kalash" class="ganesha-icon-img" style="transform: scaleX(-1);">
+                <div>
+                    <div class="ganesha-mantra">॥ श्री गणेशाय नमः ॥</div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-maroon-dark); letter-spacing: 1px;">!! Om Shree Ganeshay Namah !!</div>
+                </div>
+                <img src="assets/kalash.png" alt="Kalash" class="ganesha-icon-img">
+            </div>
+
+            <p class="ganesha-shlok-sub">
+                "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥"
+            </p>
+
+            <div id="hero-guest-salutation" style="display: none; margin-bottom: 16px; font-size: 1.05rem; font-weight: 600; color: var(--color-maroon);"></div>
+
+            <!-- Couple Hashtag Badge -->
+            <div class="couple-hashtag-pill">
+                <span>✦</span>
+                <span>#RitKaAdi</span>
+                <span>✦</span>
+            </div>
+
+            <h2 class="main-invitation-title">Wedding Invitation</h2>
+            <div class="main-date-line">On Saturday, 21st November, 2026</div>
+
+            <!-- Couple Typography -->
+            <div class="couple-names-display">
+                <span class="groom-name">Aditya</span>
+                <span class="weds-script">weds</span>
+                <span class="bride-name">Ritika</span>
+            </div>
+
+            <!-- Centerpiece Artwork Showcase (From Card Page 1 & 2) -->
+            <div class="hero-art-showcase">
+                <!-- Page 1 Radha Krishna Medallion -->
+                <div class="art-frame-gold" title="Divine Blessings - Radha Krishna">
+                    <img src="assets/radha_krishna.png" alt="Divine Radha Krishna Auspicious Portrait">
+                </div>
+
+                <!-- Ghibli Bride & Groom Royal Portrait -->
+                <div class="couple-portrait-wrapper" id="couple" title="Aditya & Ritika (#RitKaAdi)" style="border-radius: 140px 140px 20px 20px; overflow: hidden; border: 2px solid var(--color-gold);">
+                    <img src="assets/ghibli_couple.jpg" alt="Royal Wedding Couple Aditya & Ritika">
+                    <div class="couple-portrait-badge">#RitKaAdi • 21.11.2026</div>
+                </div>
+            </div>
+
+            <!-- Live Countdown Timer -->
+            <div class="countdown-box">
+                <div class="countdown-title">
+                    <span>⏳</span>
+                    <span>Counting Down to the Auspicious Moment</span>
+                    <span>⏳</span>
+                </div>
+                <div class="countdown-grid">
+                    <div class="countdown-card">
+                        <div class="countdown-num" id="count-days">--</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-card">
+                        <div class="countdown-num" id="count-hours">--</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-card">
+                        <div class="countdown-num" id="count-mins">--</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-card">
+                        <div class="countdown-num" id="count-secs">--</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION B: FAMILY ANNOUNCEMENT & LINEAGE (CARD PAGE 4)
+             ================================================================ -->
+        <section id="invitation" class="royal-card section-padding">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="section-header">
+                <div class="section-pretitle">The Sacred Union</div>
+                <h3 class="section-main-title">Auspicious Wedding Ceremony</h3>
+                <div class="section-title-divider">
+                    <div class="title-line"></div>
+                    <div class="title-diamond">❖</div>
+                    <div class="title-line"></div>
+                </div>
+            </div>
+
+            <div class="invitation-letter">
+                <div style="margin-bottom: 12px;">
+                    <img src="assets/shreenathji.png" alt="Lord Krishna Blessing" style="height: 60px; filter: drop-shadow(0 2px 4px rgba(201,151,56,0.3));">
+                </div>
+
+                <div class="grandparents-blessing">
+                    Sh. Sumitra Devi
+                </div>
+                <div class="grandparents-sub">
+                    (W/o Late Sh. Jagdish Chand Bhati)
+                </div>
+
+                <p class="invitation-quote-body">
+                    cordially invites you to grace the auspicious occasion of the<br>
+                    <strong style="color: var(--color-maroon); font-family: var(--font-royal); font-size: 1.3rem;">Wedding Ceremony</strong><br>
+                    of their beloved grand son
+                </p>
+
+                <!-- Bride & Groom Family Hierarchy Grid -->
+                <div class="family-pair-grid">
+                    <!-- Groom Side -->
+                    <div class="family-column">
+                        <div class="family-side-title">The Royal Groom</div>
+                        <div class="person-name-highlight">Aditya</div>
+                        <div class="parents-detail">
+                            S/o <strong>Mrs. Poonam & Mr. Harinder Singh Bhati</strong>
+                        </div>
+                        <div class="residence-detail">
+                            Grandson of Late Sh. Jagdish Chand Bhati & Sh. Sumitra Devi
+                        </div>
+                    </div>
+
+                    <!-- Traditional Connector -->
+                    <div class="family-connector">with</div>
+
+                    <!-- Bride Side -->
+                    <div class="family-column">
+                        <div class="family-side-title">The Royal Bride</div>
+                        <div class="person-name-highlight">Ritika</div>
+                        <div class="parents-detail">
+                            D/o <strong>Mrs. Rajbala & Sh. Devender Solanki</strong>
+                        </div>
+                        <div class="residence-detail">
+                            R/o Panna Vihar, Palwal
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ancestral Residence Note -->
+                <div class="ancestral-residence-box">
+                    <span>🏛️</span>
+                    <span>Celebration at their residence: <strong>Vill Kaurali, Ballabgarh (Faridabad)</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION C: WEDDING PROGRAMME & ITINERARY (CARD PAGE 3)
+             ================================================================ -->
+        <section id="events" class="royal-card section-padding">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="section-header">
+                <div class="section-pretitle">Celebration Schedule</div>
+                <h3 class="section-main-title">Wedding Programme</h3>
+                <div class="section-title-divider">
+                    <div class="title-line"></div>
+                    <div class="title-diamond">❖</div>
+                    <div class="title-line"></div>
+                </div>
+            </div>
+
+            <div class="events-container">
+
+                <!-- EVENT 1: LAGAN-SAGAI -->
+                <div class="event-card">
+                    <div class="event-card-header">
+                        <span class="event-badge">Day 1</span>
+                        <div class="event-date-pill">Tuesday, 17th November, 2026</div>
+                        <h4 class="event-title-main">Lagan-Sagai & Dinner</h4>
+                    </div>
+
+                    <div class="event-card-body">
+                        <ul class="event-schedule-list">
+                            <li class="schedule-item">
+                                <span class="schedule-ceremony">
+                                    <span>🪔</span> Lagan-Sagai Ceremony
+                                </span>
+                                <span class="schedule-time">3.00 pm</span>
+                            </li>
+                            <li class="schedule-item">
+                                <span class="schedule-ceremony">
+                                    <span>🍽️</span> Royal Dinner
+                                </span>
+                                <span class="schedule-time">6.00 pm</span>
+                            </li>
+                        </ul>
+
+                        <div class="venue-info-box">
+                            <div class="venue-label">Venue Location</div>
+                            <div class="venue-name">Mohan Vatika</div>
+                            <div class="venue-address">Near CNG Pump, Atali, Ballabgarh</div>
+                        </div>
+
+                        <!-- Scanned QR Code preview -->
+                        <div class="venue-qr-preview">
+                            <img src="assets/qr_mohan_vatika.png" alt="Scan for Mohan Vatika Location" class="venue-qr-img" onclick="openQRModal('Mohan Vatika', 'Near CNG Pump, Atali, Ballabgarh', 'assets/qr_mohan_vatika.png', 'https://maps.app.goo.gl/iZfixgkj4K1bGB2z6')">
+                            <div class="venue-qr-text">
+                                <div class="venue-qr-title">Instant Google Maps QR</div>
+                                <div class="venue-qr-sub">Tap QR to enlarge or scan with mobile</div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="event-actions-grid">
+                            <a href="https://maps.app.goo.gl/iZfixgkj4K1bGB2z6" target="_blank" rel="noopener noreferrer" class="btn-primary-royal">
+                                📍 Open Map
+                            </a>
+                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lagan-Sagai:+Aditya+weds+Ritika+(%23RitKaAdi)&dates=20261117T093000Z/20261117T173000Z&details=Lagan-Sagai+at+3:00+PM+followed+by+Dinner+at+6:00+PM.&location=Mohan+Vatika,+Near+CNG+Pump,+Atali,+Ballabgarh" target="_blank" rel="noopener noreferrer" class="btn-gold-royal">
+                                📅 Add to Cal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVENT 2: WEDDING DAY & BARAT -->
+                <div class="event-card">
+                    <div class="event-card-header">
+                        <span class="event-badge">The Wedding</span>
+                        <div class="event-date-pill">Saturday, 21st November, 2026</div>
+                        <h4 class="event-title-main">Shubh Vivah & Barat</h4>
+                    </div>
+
+                    <div class="event-card-body">
+                        <ul class="event-schedule-list">
+                            <li class="schedule-item">
+                                <span class="schedule-ceremony">
+                                    <span>🐎</span> Ghurchari
+                                </span>
+                                <span class="schedule-time">4.00 pm</span>
+                            </li>
+                            <li class="schedule-item">
+                                <span class="schedule-ceremony">
+                                    <span>🎺</span> Departure of Barat
+                                </span>
+                                <span class="schedule-time">5.00 pm</span>
+                            </li>
+                        </ul>
+
+                        <div class="venue-info-box">
+                            <div class="venue-label">Main Wedding Venue</div>
+                            <div class="venue-name">Mannat Farms</div>
+                            <div class="venue-address">Panna Vihar, Palwal, Hr. (Haryana)</div>
+                        </div>
+
+                        <!-- Scanned QR Code preview -->
+                        <div class="venue-qr-preview">
+                            <img src="assets/qr_mannat_farms.png" alt="Scan for Mannat Farms Location" class="venue-qr-img" onclick="openQRModal('Mannat Farms', 'Panna Vihar, Palwal, Haryana', 'assets/qr_mannat_farms.png', 'https://maps.app.goo.gl/dtAxVPVnK5Dfj4NA8')">
+                            <div class="venue-qr-text">
+                                <div class="venue-qr-title">Instant Google Maps QR</div>
+                                <div class="venue-qr-sub">Tap QR to enlarge or scan with mobile</div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="event-actions-grid">
+                            <a href="https://maps.app.goo.gl/dtAxVPVnK5Dfj4NA8" target="_blank" rel="noopener noreferrer" class="btn-primary-royal">
+                                📍 Open Map
+                            </a>
+                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding:+Aditya+weds+Ritika+(%23RitKaAdi)&dates=20261121T103000Z/20261121T213000Z&details=Ghurchari+at+4:00+PM,+Departure+of+Barat+at+5:00+PM,+followed+by+Varmala+and+Pheras+at+Mannat+Farms.&location=Mannat+Farms,+Panna+Vihar,+Palwal,+Haryana" target="_blank" rel="noopener noreferrer" class="btn-gold-royal">
+                                📅 Add to Cal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION D: BAL MANUHAAR (KIDS SPECIAL INVITATION)
+             ================================================================ -->
+        <section id="bal-manuhaar" class="bal-manuhaar-card" onclick="burstPetals()">
+            <div class="bal-icons-row">
+                <img src="assets/shehnai.png" alt="Shehnai & Dhol" class="bal-icon-img">
+                <img src="assets/baraat.png" alt="Royal Baraat Procession" style="height: 60px; object-fit: contain;">
+                <img src="assets/shehnai.png" alt="Shehnai & Dhol" class="bal-icon-img" style="transform: scaleX(-1);">
+            </div>
+
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-gold-dark); margin-bottom: 8px;">
+                ✦ Bal Manuhaar ✦
+            </div>
+
+            <div class="bal-verse-hindi">
+                ढोलक बजेगा, ठुमका लगाएंगे,<br>
+                अपने चाचू / भाई की शादी में सबको नचाएंगे!
+            </div>
+
+            <div class="bal-verse-hinglish">
+                "Dholak Bajayenga, Thumka Lagayenge,<br>
+                Apne Chachu/Bhai ki Shadi mein Sabko Nachayenge :"
+            </div>
+
+            <div class="bal-names">
+                ✨ Yatika, Bhargav, Dimpal ✨
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION E: AUTHENTIC PRINTED CARD LOOKBOOK (4-PAGE DIGITAL VIEWER)
+             ================================================================ -->
+        <section id="lookbook" class="royal-card lookbook-section">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="section-header">
+                <div class="section-pretitle">The Original Keepsake</div>
+                <h3 class="section-main-title">Printed Wedding Card Lookbook</h3>
+                <div class="section-title-divider">
+                    <div class="title-line"></div>
+                    <div class="title-diamond">❖</div>
+                    <div class="title-line"></div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 6px;">
+                    Flip through all 4 authentic pages of our physical wedding card. Tap the image to zoom.
+                </p>
+            </div>
+
+            <div class="lookbook-viewer">
+                <div class="lookbook-main-image-container">
+                    <img id="lookbook-image" src="assets/card_page_1.jpg" alt="Wedding Invitation Page 1" class="lookbook-main-image">
+                </div>
+
+                <div class="lookbook-controls-bar">
+                    <button id="lookbook-prev-btn" class="lookbook-page-btn">
+                        ← Prev Page
+                    </button>
+                    <span id="lookbook-indicator" class="lookbook-page-indicator">Page 1 of 4</span>
+                    <button id="lookbook-next-btn" class="lookbook-page-btn">
+                        Next Page →
+                    </button>
+                </div>
+
+                <div style="margin-top: 14px;">
+                    <a href="assets/wedding_invitation.pdf" download="Aditya_Ritika_Wedding_Card.pdf" class="btn-gold-royal" style="display: inline-flex; font-size: 0.85rem; padding: 8px 18px;">
+                        📥 Download Official Printed Card (PDF)
+                    </a>
+                </div>
+
+                <div class="lookbook-thumbnails-row">
+                    <button class="thumb-btn active" data-page="0" title="Page 1: Front Cover">
+                        <img src="assets/card_page_1.jpg" alt="Page 1 Thumbnail">
+                    </button>
+                    <button class="thumb-btn" data-page="1" title="Page 2: Couple Portrait">
+                        <img src="assets/card_page_2.jpg" alt="Page 2 Thumbnail">
+                    </button>
+                    <button class="thumb-btn" data-page="2" title="Page 3: Wedding Programme">
+                        <img src="assets/card_page_3.jpg" alt="Page 3 Thumbnail">
+                    </button>
+                    <button class="thumb-btn" data-page="3" title="Page 4: RSVPs & Compliments">
+                        <img src="assets/card_page_4.jpg" alt="Page 4 Thumbnail">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION F: FAMILY HONOR ROLL & CONTACTS (CARD PAGE 4)
+             ================================================================ -->
+        <section id="honor-roll" class="royal-card section-padding">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="section-header">
+                <div class="section-pretitle">Distinguished Family</div>
+                <h3 class="section-main-title">R.S.V.P. & With Best Compliments</h3>
+                <div class="section-title-divider">
+                    <div class="title-line"></div>
+                    <div class="title-diamond">❖</div>
+                    <div class="title-line"></div>
+                </div>
+            </div>
+
+            <div class="honor-roll-grid">
+
+                <!-- RSVP Column -->
+                <div class="honor-column-card">
+                    <h4 class="honor-column-title">R.S.V.P.</h4>
+                    <ul class="names-list">
+                        <li><span class="name-bullet">✦</span> <span>Th. Pratap Singh Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Rupesh Singh Bhati <span class="honor-designation">(Member)</span></span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Surender Singh Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Rajender Singh Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Rajkumar Singh Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Gopal Singh Bhati <span class="honor-designation">(Airforce)</span></span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Ranpal Singh Bhati, Th. Hari Singh Babu</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Sunil Singh Bhati <span class="honor-designation">(Numberdar)</span></span></li>
+                        <li><span class="name-bullet">✦</span> <span>Th. Aman Bhati</span></li>
+                    </ul>
+                </div>
+
+                <!-- Best Compliments Column -->
+                <div class="honor-column-card">
+                    <h4 class="honor-column-title">With Best Compliments From</h4>
+                    <ul class="names-list">
+                        <li><span class="name-bullet">✦</span> <span>Pushpender Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Vinod Bhati, Arun Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Sandeep Bhati, Kuldeep Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Netrapal Bhati, Kaushlender Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Ashish Bhati, Narender Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Vikrant Bhati, Harsh Bhati</span></li>
+                        <li><span class="name-bullet">✦</span> <span>Ritik Bhati, Kunal Bhati</span></li>
+                        <li style="font-weight: 700; color: var(--color-maroon); margin-top: 6px;">
+                            <span class="name-bullet">❦</span> <span>& All Bhati Family</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Direct Contact & Host Calling Cards -->
+            <div class="contacts-showcase">
+                <div style="text-align: center;">
+                    <div style="font-family: var(--font-royal); font-weight: 700; color: var(--color-maroon); font-size: 1.1rem;">
+                        From / For Inquiries & Assistance
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">
+                        H.No.-141/1, Vill Kaurali, Ballabgarh (Faridabad)
+                    </div>
+                </div>
+
+                <div class="contacts-grid">
+                    <!-- Contact 1 -->
+                    <div class="contact-card-item">
+                        <div class="contact-info-text">
+                            <div class="contact-name-title">Th. Harinder Singh Bhati</div>
+                            <div class="contact-number-val">+91 9560216660</div>
+                        </div>
+                        <div class="contact-actions-mini">
+                            <a href="tel:+919560216660" class="btn-icon-circle btn-icon-call" title="Call">📞</a>
+                            <a href="https://wa.me/919560216660?text=Namaste%20Harinder%20Singh%20Ji!%20Regarding%20Aditya%20%26%20Ritika's%20Wedding%20(%23RitKaAdi)..." target="_blank" rel="noopener noreferrer" class="btn-icon-circle btn-icon-wa" title="WhatsApp">💬</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact 2 -->
+                    <div class="contact-card-item">
+                        <div class="contact-info-text">
+                            <div class="contact-name-title">Th. Pushpender Singh Bhati</div>
+                            <div class="contact-number-val">+91 9711066699</div>
+                        </div>
+                        <div class="contact-actions-mini">
+                            <a href="tel:+919711066699" class="btn-icon-circle btn-icon-call" title="Call">📞</a>
+                            <a href="https://wa.me/919711066699?text=Namaste%20Pushpender%20Singh%20Ji!%20Regarding%20Aditya%20%26%20Ritika's%20Wedding%20(%23RitKaAdi)..." target="_blank" rel="noopener noreferrer" class="btn-icon-circle btn-icon-wa" title="WhatsApp">💬</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact 3 -->
+                    <div class="contact-card-item">
+                        <div class="contact-info-text">
+                            <div class="contact-name-title">Bhati Residence Contact</div>
+                            <div class="contact-number-val">+91 9560216605</div>
+                        </div>
+                        <div class="contact-actions-mini">
+                            <a href="tel:+919560216605" class="btn-icon-circle btn-icon-call" title="Call">📞</a>
+                            <a href="https://wa.me/919560216605?text=Namaste!%20Regarding%20Aditya%20%26%20Ritika's%20Wedding%20(%23RitKaAdi)..." target="_blank" rel="noopener noreferrer" class="btn-icon-circle btn-icon-wa" title="WhatsApp">💬</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION G: INTERACTIVE RSVP & BLESSINGS WALL (GUESTBOOK)
+             ================================================================ -->
+        <section id="guestbook" class="royal-card section-padding">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="section-header">
+                <div class="section-pretitle">Guestbook & Wishes</div>
+                <h3 class="section-main-title">Send Your Blessings & RSVP</h3>
+                <div class="section-title-divider">
+                    <div class="title-line"></div>
+                    <div class="title-diamond">❖</div>
+                    <div class="title-line"></div>
+                </div>
+            </div>
+
+            <div class="rsvp-section-layout">
+                <!-- Interactive RSVP Form -->
+                <div class="rsvp-form-card">
+                    <h4 style="font-family: var(--font-royal); color: var(--color-maroon); font-size: 1.15rem; margin-bottom: 18px;">
+                        Confirm Your Attendance
+                    </h4>
+
+                    <form id="wedding-rsvp-form">
+                        <div class="form-group">
+                            <label class="form-label" for="rsvp-name">Your Full Name / Family Name *</label>
+                            <input type="text" id="rsvp-name" class="form-input" placeholder="e.g. Ramesh Sharma & Family" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="rsvp-phone">Phone / WhatsApp Number (Optional)</label>
+                            <input type="tel" id="rsvp-phone" class="form-input" placeholder="e.g. 9876543210">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="rsvp-attendance">Attending Events *</label>
+                            <select id="rsvp-attendance" class="form-select">
+                                <option value="Both Events (17th & 21st Nov)">Attending Both Events (17th & 21st Nov)</option>
+                                <option value="Wedding Day Only (21st Nov)">Wedding Day Only (21st Nov)</option>
+                                <option value="Lagan-Sagai Only (17th Nov)">Lagan-Sagai Only (17th Nov)</option>
+                                <option value="Sending Warm Blessings from Afar">Sending Warm Blessings from Afar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="rsvp-guests">Number of Guests Joining</label>
+                            <select id="rsvp-guests" class="form-select">
+                                <option value="1">1 Person</option>
+                                <option value="2" selected>2 Persons</option>
+                                <option value="3">3 Persons</option>
+                                <option value="4">4 Persons</option>
+                                <option value="5+">5+ Family Members</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="rsvp-message">Warm Wishes & Blessings for Aditya & Ritika</label>
+                            <textarea id="rsvp-message" rows="3" class="form-textarea" placeholder="Write your heartfelt blessing or message for the couple..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary-royal" style="width: 100%; padding: 12px; font-size: 0.95rem; justify-content: center;">
+                            💌 Submit RSVP & Blessings
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Live Blessings Wall -->
+                <div class="blessings-wall-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h4 style="font-family: var(--font-royal); color: var(--color-maroon); font-size: 1.15rem;">
+                            Live Blessings Wall
+                        </h4>
+                        <span style="font-size: 0.75rem; color: var(--color-gold-dark); font-weight: 700;">#RitKaAdi</span>
+                    </div>
+
+                    <div class="blessings-scroll-area" id="blessings-scroll-area">
+                        <!-- Populated dynamically by app.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION H: SHARE & PERSONALIZED LINK GENERATOR FOR HOST
+             ================================================================ -->
+        <section class="share-host-bar">
+            <h4 style="font-family: var(--font-royal); color: var(--color-maroon); font-size: 1.25rem; margin-bottom: 6px;">
+                Personalize & Share This Invitation
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto 16px auto;">
+                Create a customized royal invitation link addressed personally to your relatives or friends with their name displayed on the royal wax envelope.
+            </p>
+
+            <div style="display: flex; max-width: 480px; margin: 0 auto; gap: 8px;">
+                <input type="text" id="guest-name-custom-input" class="form-input" placeholder="Type guest name (e.g. Verma Family)" style="flex: 1;">
+                <button id="btn-generate-guest-link" class="btn-primary-royal" style="white-space: nowrap;">
+                    Generate Link
+                </button>
+            </div>
+
+            <!-- Generated Result Container -->
+            <div id="generated-link-container" style="display: none; max-width: 480px; margin: 16px auto 0 auto;">
+                <input type="text" id="generated-url-field" class="form-input" readonly style="font-size: 0.8rem; text-align: center; margin-bottom: 8px; background: #fff;">
+                <div style="display: flex; gap: 8px; justify-content: center;">
+                    <button id="copy-guest-link-btn" class="btn-gold-royal">Copy Link</button>
+                    <button id="share-wa-guest-btn" class="btn-primary-royal" style="background: #25D366; border-color: #128C7E;">
+                        Share on WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Direct Quick Share -->
+            <div class="share-buttons-row">
+                <a href="#" id="direct-wa-share" class="btn-gold-royal">
+                    📲 Share Wedding Invite on WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="royal-footer">
+        <div class="footer-monogram">AR</div>
+        <div class="footer-blessing">Aditya & Ritika</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-dark); margin-bottom: 6px;">
+            Saturday, 21st November, 2026 • Vill Kaurali, Ballabgarh (Faridabad)
+        </p>
+        <p class="footer-copyright">
+            Crafted with love for the Bhati & Solanki Families • #RitKaAdi
+        </p>
+    </footer>
+
+    <!-- ====================================================================
+         APP MODAL (FOR QR CODES & IMAGE LIGHTBOX)
+         ==================================================================== -->
+    <div class="modal-overlay" id="app-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="modal-close-btn" title="Close">✕</button>
+            <div id="modal-dynamic-content">
+                <!-- Injected via app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="audio.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

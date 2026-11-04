@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="palace-stone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faeee6"/>
+      <stop offset="50%" stop-color="#edd5c5"/>
+      <stop offset="100%" stop-color="#debba7"/>
+    </linearGradient>
+    <linearGradient id="palace-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c99738"/>
+      <stop offset="50%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#8c6418"/>
+    </linearGradient>
+    <linearGradient id="peacock-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00a8ff"/>
+      <stop offset="50%" stop-color="#0044aa"/>
+      <stop offset="100%" stop-color="#001850"/>
+    </linearGradient>
+    <linearGradient id="peacock-plumage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c99738"/>
+      <stop offset="30%" stop-color="#ffd700"/>
+      <stop offset="60%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#16a085"/>
+    </linearGradient>
+    <linearGradient id="elephant-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="50%" stop-color="#1a252f"/>
+      <stop offset="100%" stop-color="#0d1318"/>
+    </linearGradient>
+    <linearGradient id="jhool-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e84393"/>
+      <stop offset="50%" stop-color="#c82333"/>
+      <stop offset="100%" stop-color="#680e1b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Palace Architecture Silhouette -->
+  <g opacity="0.95">
+    <!-- Center Palace Chhatri / Pavilion -->
+    <path d="M 120 240 L 120 160 Q 120 140 140 130 L 140 120 Q 200 60 250 50 Q 300 60 360 120 L 360 130 Q 380 140 380 160 L 380 240 Z" fill="url(#palace-stone)"/>
+    <!-- Central Dome Spire (Kalash Finial) -->
+    <path d="M 247 50 L 253 50 L 251 15 L 249 15 Z" fill="url(#palace-gold)"/>
+    <circle cx="250" cy="15" r="4" fill="url(#palace-gold)"/>
+    <!-- Pavilion Arched Openings -->
+    <path d="M 170 240 L 170 170 Q 250 140 330 170 L 330 240 Z" fill="#edd6c8" stroke="#d5b9a8" stroke-width="2"/>
+    <path d="M 190 240 L 190 185 Q 250 160 310 185 L 310 240 Z" fill="#dfbeab"/>
+
+    <!-- Left Chhatri (Perch for peacock) -->
+    <path d="M 20 240 L 20 150 Q 60 100 100 100 Q 140 100 180 150 L 180 240 Z" fill="url(#palace-stone)" opacity="0.8"/>
+    <path d="M 98 100 L 102 100 L 101 70 L 99 70 Z" fill="url(#palace-gold)"/>
+    <circle cx="100" cy="70" r="3" fill="url(#palace-gold)"/>
+
+    <!-- Right Chhatri -->
+    <path d="M 340 240 L 340 150 Q 380 100 420 100 Q 460 100 500 150 L 500 240 Z" fill="url(#palace-stone)" opacity="0.8"/>
+    <path d="M 418 100 L 422 100 L 421 70 L 419 70 Z" fill="url(#palace-gold)"/>
+    <circle cx="420" cy="70" r="3" fill="url(#palace-gold)"/>
+
+    <!-- Terrace Balustrade / Jali Lattice -->
+    <line x1="0" y1="230" x2="500" y2="230" stroke="url(#palace-gold)" stroke-width="3"/>
+    <line x1="0" y1="238" x2="500" y2="238" stroke="url(#palace-gold)" stroke-width="2"/>
+  </g>
+
+  <!-- Left Regal Perched Peacock -->
+  <g transform="translate(45, 90)">
+    <!-- Peacock Train / Ornate Plumage falling down balustrade -->
+    <path d="M 35 60 Q 55 100 45 150 Q 30 145 15 130 Q 10 90 25 60 Z" fill="url(#peacock-plumage)"/>
+    <!-- Plumage eye details -->
+    <circle cx="35" cy="85" r="4" fill="#00a8ff" stroke="#ffd700" stroke-width="1.5"/>
+    <circle cx="28" cy="110" r="4.5" fill="#00a8ff" stroke="#ffd700" stroke-width="1.5"/>
+    <circle cx="38" cy="125" r="4" fill="#00a8ff" stroke="#ffd700" stroke-width="1.5"/>
+    <circle cx="25" cy="138" r="3.5" fill="#00a8ff" stroke="#ffd700" stroke-width="1.2"/>
+
+    <!-- Peacock Body & Neck -->
+    <path d="M 22 55 Q 12 40 18 20 Q 22 10 28 8 Q 32 8 32 15 Q 32 30 38 45 Q 40 55 35 60 Z" fill="url(#peacock-body)"/>
+    <!-- Crest on head -->
+    <line x1="28" y1="8" x2="31" y2="0" stroke="#00a8ff" stroke-width="1.5"/>
+    <circle cx="31" cy="0" r="2" fill="#ffd700"/>
+    <line x1="26" y1="8" x2="27" y2="1" stroke="#00a8ff" stroke-width="1.5"/>
+    <circle cx="27" cy="1" r="1.8" fill="#ffd700"/>
+    <!-- Beak -->
+    <polygon points="20,15 14,17 20,18" fill="#ffd700"/>
+    <!-- Eye -->
+    <circle cx="24" cy="14" r="1.2" fill="#ffffff"/>
+  </g>
+
+  <!-- Right Royal Ceremonial Elephant with Raised Trunk -->
+  <g transform="translate(350, 110)">
+    <!-- Elephant Body -->
+    <path d="M 35 70 
+             Q 20 40 40 25 
+             Q 75 10 100 25 
+             Q 125 40 120 70 
+             L 115 125 L 100 125 L 102 85 
+             L 85 85 L 85 125 L 72 125 
+             L 75 85 L 50 85 L 48 125 L 35 125 Z" fill="url(#elephant-skin)"/>
+    
+    <!-- Raised Trunk (Auspicious Greeting) -->
+    <path d="M 38 35 Q 15 35 10 20 Q 5 5 15 -5 Q 25 -10 28 -2 Q 25 8 18 8 Q 15 18 28 25" 
+          fill="none" stroke="#2c3e50" stroke-width="11" stroke-linecap="round"/>
+    <!-- Tusks -->
+    <path d="M 28 40 Q 15 42 12 36" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Ear with Ornate Border -->
+    <path d="M 52 28 Q 70 30 68 55 Q 60 70 48 65 Z" fill="#233140" stroke="url(#palace-gold)" stroke-width="1.5"/>
+
+    <!-- Ceremonial Embroidered Jhool / Saddlecloth (Pink & Gold) -->
+    <path d="M 55 35 L 105 35 L 110 75 Q 80 82 50 75 Z" fill="url(#jhool-pink)" stroke="url(#palace-gold)" stroke-width="2"/>
+    <circle cx="80" cy="55" r="8" fill="none" stroke="#ffd700" stroke-width="1.5"/>
+    <circle cx="80" cy="55" r="3" fill="#ffd700"/>
+    <!-- Tassels on Jhool border -->
+    <line x1="55" y1="75" x2="55" y2="82" stroke="#ffd700" stroke-width="2"/>
+    <line x1="70" y1="78" x2="70" y2="85" stroke="#ffd700" stroke-width="2"/>
+    <line x1="85" y1="80" x2="85" y2="87" stroke="#ffd700" stroke-width="2"/>
+    <line x1="100" y1="78" x2="100" y2="85" stroke="#ffd700" stroke-width="2"/>
+
+    <!-- Royal Howdah / Canopy on Back -->
+    <path d="M 65 20 L 95 20 L 92 35 L 68 35 Z" fill="url(#palace-gold)"/>
+    <polygon points="80,5 65,20 95,20" fill="url(#palace-gold)"/>
+    <circle cx="80" cy="5" r="2.5" fill="#ffd700"/>
+  </g>
+</svg>
