@@ -140,11 +140,29 @@
         </ul>
 
         <div style="display: flex; align-items: center; gap: 8px;">
-            <button id="reopen-envelope-btn" class="nav-link" style="border: 1px solid var(--color-gold); background: transparent; cursor: pointer;">
-                ✉️ Envelope
+            <button id="reopen-envelope-btn" class="nav-envelope-btn" title="Replay Envelope Opening">
+                ✉️ <span class="nav-envelope-text">Envelope</span>
+            </button>
+            <button type="button" class="mobile-nav-toggle-btn" id="mobile-nav-toggle-btn" aria-label="Toggle Navigation">
+                ☰
             </button>
         </div>
     </header>
+
+    <!-- Mobile Slide-Down Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <ul class="mobile-nav-list">
+            <li><a href="#hero" class="mobile-nav-item">🏠 Home</a></li>
+            <li><a href="#scratch-card" class="mobile-nav-item">🎟️ Reveal Date (Scratch)</a></li>
+            <li><a href="#couple" class="mobile-nav-item">💑 The Royal Couple</a></li>
+            <li><a href="#invitation" class="mobile-nav-item">📜 Sacred Invitation</a></li>
+            <li><a href="#events" class="mobile-nav-item">📅 Wedding Programme &amp; Maps</a></li>
+            <li><a href="#bal-manuhaar" class="mobile-nav-item">🧒 Bal Manuhaar</a></li>
+            <li><a href="#lookbook" class="mobile-nav-item">📖 Original Printed Card</a></li>
+            <li><a href="#honor-roll" class="mobile-nav-item">📞 Family Contacts &amp; RSVP</a></li>
+            <li><a href="#guestbook" class="mobile-nav-item">✍️ Send Blessings</a></li>
+        </ul>
+    </div>
 
     <!-- ====================================================================
          3. FLOATING MUSIC CONTROLLER

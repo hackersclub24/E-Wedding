@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initPersonalizedGuest();
+    initMobileNav();
     initEnvelope();
     initPetalsCanvas();
     initCountdown();
@@ -43,6 +44,27 @@ function escapeHtml(str) {
 /* ==========================================================================
    2. ROYAL ENVELOPE OPENING ANIMATION (MATCHING VIRAL VIDEO)
    ========================================================================== */
+
+
+
+function initMobileNav() {
+    const mobileToggle = document.getElementById('mobile-nav-toggle-btn');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    if (!mobileToggle || !mobileDrawer) return;
+
+    mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('drawer-open');
+        mobileToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileDrawer.querySelectorAll('.mobile-nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            mobileDrawer.classList.remove('drawer-open');
+            mobileToggle.textContent = '☰';
+        });
+    });
+}
+
 function initEnvelope() {
     const overlay = document.getElementById('envelope-overlay');
     const wrapper = document.getElementById('envelope-wrapper');
