@@ -85,11 +85,12 @@ export default function ShareTools() {
   };
 
   const handleDirectShare = () => {
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+    // Always strip ?guest= and ?host= so forwarded links never display someone else's name
+    const cleanUrl = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '';
     const text = encodeURIComponent(
       `🌸 *Wedding Invitation: Aditya weds Ritika (#RitKaAdi)* 🌸\n\n` +
-      `You are cordially invited to celebrate our wedding on 17th & 21st November 2026!\n` +
-      `View interactive digital card, itinerary, and venue details:\n${currentUrl}`
+      `You are cordially invited to celebrate the auspicious wedding of Aditya & Ritika on 17th & 21st November 2026!\n` +
+      `View interactive digital card, ceremonies, and venue maps:\n${cleanUrl}`
     );
     window.open(`https://wa.me/?text=${text}`, '_blank');
   };

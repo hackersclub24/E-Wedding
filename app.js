@@ -718,7 +718,8 @@ function initShareTools() {
         if (btn) {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const url = window.location.href;
+                // Always strip query parameters (?guest=, ?host=) so forwarded links never leak another guest's name
+                const url = window.location.origin + window.location.pathname;
                 const text = encodeURIComponent(
                     `🌸 *Wedding Invitation: Aditya weds Ritika (#RitKaAdi)* 🌸\n\n` +
                     `You are cordially invited to celebrate our wedding on 17th & 21st November 2026!\n` +
