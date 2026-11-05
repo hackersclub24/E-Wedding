@@ -66,7 +66,18 @@ export default function WeddingProgramme({ onOpenQR }) {
                   )
                 }
               />
-              <div className="venue-qr-text">
+              <div
+                className="venue-qr-text"
+                onClick={() =>
+                  onOpenQR(
+                    'Mannat Farms',
+                    'Main Wedding Venue: Panna Vihar, Palwal, Haryana',
+                    '/assets/qr_mannat_farms.png',
+                    'https://maps.app.goo.gl/dtAxVPVnK5Dfj4NA8'
+                  )
+                }
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="venue-qr-title">Instant Google Maps QR</div>
                 <div className="venue-qr-sub">Tap QR to enlarge or scan with mobile</div>
               </div>
@@ -139,7 +150,18 @@ export default function WeddingProgramme({ onOpenQR }) {
                   )
                 }
               />
-              <div className="venue-qr-text">
+              <div
+                className="venue-qr-text"
+                onClick={() =>
+                  onOpenQR(
+                    'Mannat Farms',
+                    'Main Wedding Venue: Panna Vihar, Palwal, Haryana',
+                    '/assets/qr_mannat_farms.png',
+                    'https://maps.app.goo.gl/dtAxVPVnK5Dfj4NA8'
+                  )
+                }
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="venue-qr-title">Instant Google Maps QR</div>
                 <div className="venue-qr-sub">Tap QR to enlarge or scan with mobile</div>
               </div>

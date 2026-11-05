@@ -53,13 +53,24 @@ function WeddingContent() {
   };
 
   const handleOpenQR = (title, sub, qrSrc, mapUrl) => {
+    if (typeof title === 'object' && title !== null) {
+      setModalData({
+        isOpen: true,
+        type: 'qr',
+        title: title.venueName || title.title || 'Venue Location QR',
+        sub: title.event || title.address || title.sub || '',
+        imgSrc: title.qrSrc || title.imgSrc || '',
+        linkUrl: title.mapsUrl || title.linkUrl || ''
+      });
+      return;
+    }
     setModalData({
       isOpen: true,
       type: 'qr',
-      title,
-      sub,
-      imgSrc: qrSrc,
-      linkUrl: mapUrl
+      title: title || 'Venue Location QR',
+      sub: sub || '',
+      imgSrc: qrSrc || '',
+      linkUrl: mapUrl || ''
     });
   };
 
