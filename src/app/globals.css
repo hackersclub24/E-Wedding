@@ -946,7 +946,8 @@ body {
   position: relative;
   padding: 10px;
   background: radial-gradient(circle, #fffaf0 0%, #f4ead7 100%);
-  border-radius: 200px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
   box-shadow: 0 10px 30px rgba(201, 151, 56, 0.25), 0 2px 10px rgba(0,0,0,0.06);
   border: 2px solid var(--color-gold);
   max-width: 320px;
@@ -960,8 +961,10 @@ body {
 .art-frame-gold img {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 190px;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .couple-portrait-wrapper {

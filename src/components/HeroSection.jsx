@@ -100,9 +100,9 @@ export default function HeroSection({ guestName }) {
 
         {/* Centerpiece Artwork Showcase */}
         <div className="hero-art-showcase">
-          {/* Page 1 Radha Krishna Medallion */}
-          <div className="art-frame-gold" title="Divine Blessings - Radha Krishna">
-            <img src="/assets/radha_krishna.png" alt="Divine Radha Krishna Auspicious Portrait" />
+          {/* Divine Lord Ganesha Medallion */}
+          <div className="art-frame-gold" title="Divine Blessings - Lord Ganesha">
+            <img src="/assets/ganesha_blessing.jpg" alt="Divine Lord Ganesha Auspicious Blessing" />
             <div className="art-caption-sub">Divine Blessings</div>
           </div>
 
