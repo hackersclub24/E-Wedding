@@ -118,23 +118,24 @@ body {
 .splash-envelope-phone-canvas {
   position: relative;
   width: 100%;
-  max-width: 440px;
-  height: 100vh;
-  max-height: 860px;
+  max-width: 400px;
+  height: min(600px, 85vh);
   background-color: #f7e8e4;
-  overflow: hidden;
+  overflow: visible;
   perspective: 1600px;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65), 0 0 50px rgba(201, 151, 56, 0.25);
   cursor: pointer;
   z-index: 1;
   transition: transform 0.6s ease;
+  border-radius: 28px;
+  border: 1.5px solid rgba(243, 223, 149, 0.45);
 }
 
 @media (min-width: 481px) {
   .splash-envelope-phone-canvas {
-    border-radius: 36px;
-    height: 92vh;
-    border: 1px solid rgba(243, 223, 149, 0.3);
+    border-radius: 28px;
+    height: min(600px, 85vh);
+    border: 1.5px solid rgba(243, 223, 149, 0.45);
   }
 }
 
@@ -147,7 +148,8 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  overflow: hidden;
+  overflow: visible;
+  border-radius: inherit;
 }
 
 .envelope-interior-backing {
@@ -155,18 +157,19 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
+  border-radius: inherit;
   background: linear-gradient(180deg, #996e1f 0%, #ecd077 22%, #a87922 55%, #3d2305 100%);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.45);
 }
 
 .envelope-sliding-card {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
   background: linear-gradient(180deg, #fffcf7 0%, #fff7f0 50%, #faeee5 100%);
-  border-radius: 20px;
+  border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
   border: 1.5px solid rgba(201, 151, 56, 0.45);
   display: flex;
@@ -176,16 +179,17 @@ body {
   padding: 10px 14px 12px 14px;
   text-align: center;
   overflow: hidden;
-  transform: translateY(12%) scale(0.96);
+  transform: translateY(0%) scale(0.98);
   transition: transform 1.5s cubic-bezier(0.18, 0.89, 0.32, 1.05);
+  z-index: 2;
 }
 
 .splash-envelope-phone-canvas.is-opening .envelope-sliding-card {
-  transform: translateY(10%) scale(0.98);
+  transform: translateY(0%) scale(0.99);
 }
 
 .splash-envelope-phone-canvas.is-revealed .envelope-sliding-card {
-  transform: translateY(-38%) scale(1.02);
+  transform: translateY(-26%) scale(1.02);
 }
 
 /* Card Content Elements */
@@ -353,6 +357,7 @@ body {
   height: 100%;
   z-index: 3;
   pointer-events: none;
+  border-radius: inherit;
 }
 
 .envelope-embossed-bg {
@@ -360,11 +365,13 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
+  border-radius: inherit;
+  background-color: #f7e8e4;
   background-image: url('/assets/envelope_embossed_paper.svg');
   background-size: cover;
   background-position: center;
-  /* Pocket covers all sides and bottom, V-notch in center */
-  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% 46%);
+  /* Pocket covers all sides and bottom, gentle V-notch in center at 42% */
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% 42%);
   filter: drop-shadow(0 -4px 14px rgba(90, 45, 40, 0.22));
 }
 
@@ -374,7 +381,7 @@ body {
   left: 0;
   width: 50%;
   height: 100%;
-  clip-path: polygon(0 0, 100% 48%, 0 100%);
+  clip-path: polygon(0 0, 100% 42%, 0 100%);
   background: linear-gradient(90deg, rgba(215, 180, 172, 0.35), transparent);
   pointer-events: none;
 }
@@ -385,7 +392,7 @@ body {
   right: 0;
   width: 50%;
   height: 100%;
-  clip-path: polygon(100% 0, 0 48%, 100% 100%);
+  clip-path: polygon(100% 0, 0 42%, 100% 100%);
   background: linear-gradient(-90deg, rgba(215, 180, 172, 0.35), transparent);
   pointer-events: none;
 }
@@ -395,8 +402,8 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 54%;
-  clip-path: polygon(0 100%, 50% 10%, 100% 100%);
+  height: 58%;
+  clip-path: polygon(0 100%, 50% 12%, 100% 100%);
   background: linear-gradient(0deg, rgba(220, 185, 178, 0.28), transparent);
   box-shadow: 0 -4px 15px rgba(110, 60, 55, 0.15);
   pointer-events: none;
@@ -410,7 +417,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 48%;
+  height: 44%;
   z-index: 5;
   transform-origin: top center;
   transform-style: preserve-3d;
@@ -420,7 +427,7 @@ body {
 
 .envelope-top-flap-3d.flap-flipped {
   transform: rotateX(180deg);
-  z-index: 2;
+  z-index: 1; /* Opened flap hinges backwards behind the rising card (z-index: 2) */
 }
 
 .flap-face {
@@ -591,25 +598,28 @@ body {
 }
 
 .splash-skip-button {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 20;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(201, 151, 56, 0.4);
-  border-radius: 16px;
-  padding: 5px 12px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10005;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(201, 151, 56, 0.55);
+  border-radius: 20px;
+  padding: 6px 14px;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: #680e1b;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .splash-skip-button:hover {
   background: #ffffff;
   border-color: #c99738;
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -2623,20 +2633,21 @@ body {
 @media (max-width: 480px) {
   /* Splash Screen / Authentic Centered Royal Envelope on Phones */
   .splash-overlay {
-    padding: 16px 12px !important;
+    padding: 24px 12px 20px 12px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
   }
 
   .splash-envelope-phone-canvas {
-    width: min(92vw, 360px) !important;
-    max-width: 360px !important;
-    height: min(570px, 80dvh) !important;
-    max-height: 590px !important;
-    border-radius: 24px !important;
+    width: min(88vw, 340px) !important;
+    max-width: 340px !important;
+    height: min(520px, 72dvh) !important;
+    max-height: 540px !important;
+    border-radius: 20px !important;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 35px rgba(201, 151, 56, 0.35) !important;
     border: 1.5px solid rgba(243, 223, 149, 0.45) !important;
+    overflow: visible !important;
   }
 
   .envelope-sliding-card {
@@ -2646,10 +2657,11 @@ body {
     right: 10px !important;
     padding: 8px 8px 10px 8px !important;
     border-radius: 16px !important;
+    transform: translateY(0%) scale(0.98) !important;
   }
 
   .splash-envelope-phone-canvas.is-revealed .envelope-sliding-card {
-    transform: translateY(-36%) scale(1.02) !important;
+    transform: translateY(-20%) scale(1.02) !important;
   }
 
   .tap-pill {
@@ -2660,10 +2672,10 @@ body {
   }
 
   .splash-skip-button {
-    top: 12px !important;
-    right: 12px !important;
-    font-size: 0.7rem !important;
-    padding: 4px 10px !important;
+    top: 14px !important;
+    right: 14px !important;
+    font-size: 0.72rem !important;
+    padding: 5px 12px !important;
   }
 
   .card-palace-arch-wrapper {
