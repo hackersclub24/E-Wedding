@@ -21,12 +21,17 @@ export default function FamilySection() {
       </div>
 
       <div className="invitation-letter">
-        <div style={{ marginBottom: '12px' }}>
-          <img
-            src="/assets/shreenathji.png"
-            alt="Lord Krishna Blessing"
-            style={{ height: '60px', filter: 'drop-shadow(0 2px 4px rgba(201,151,56,0.3))', display: 'inline-block' }}
-          />
+        <div className="grandparent-portrait-container">
+          <div className="grandparent-portrait-frame">
+            <div className="grandparent-portrait-inner">
+              <img
+                src="/assets/sumitra_devi.jpeg"
+                alt="Sh. Sumitra Devi"
+                className="grandparent-portrait-img"
+              />
+            </div>
+            <div className="grandparent-portrait-tag">Grandmother's Blessing</div>
+          </div>
         </div>
 
         <div className="grandparents-blessing">
