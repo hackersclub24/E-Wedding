@@ -17,7 +17,7 @@ export default function BalManuhaar() {
     <section id="bal-manuhaar" className="bal-manuhaar-card" onClick={handleBurst}>
       <div className="bal-icons-row">
         <img src="/assets/shehnai.png" alt="Shehnai & Dhol" className="bal-icon-img" />
-        <img src="/assets/baraat.png" alt="Royal Baraat Procession" style={{ height: '60px', objectFit: 'contain' }} />
+        <img src="/assets/baraat.png" alt="Royal Baraat Procession" className="bal-baraat-img" />
         <img src="/assets/shehnai.png" alt="Shehnai & Dhol" className="bal-icon-img" style={{ transform: 'scaleX(-1)' }} />
       </div>
 

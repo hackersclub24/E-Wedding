@@ -1537,9 +1537,18 @@ body {
 }
 
 .bal-icon-img {
-  height: 52px;
+  height: 54px;
   width: auto;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(201, 151, 56, 0.3));
+}
+
+.bal-baraat-img {
+  height: 62px;
+  max-width: 290px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(201, 151, 56, 0.3));
 }
 
 .bal-verse-hindi {
@@ -2447,6 +2456,11 @@ body {
 
   .bal-icon-img {
     height: 38px;
+  }
+
+  .bal-baraat-img {
+    height: 42px;
+    max-width: 170px;
   }
 
   .bal-verse-hindi {
