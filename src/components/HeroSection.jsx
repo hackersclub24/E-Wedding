@@ -41,14 +41,14 @@ export default function HeroSection({ guestName }) {
 
         {/* Sacred Invocation */}
         <div className="ganesha-header">
-          <img src="/assets/kalash.png" alt="Kalash" className="ganesha-icon-img" style={{ transform: 'scaleX(-1)' }} />
+          <img src="/assets/kalash_gold.svg" alt="Auspicious Kalash" className="ganesha-icon-img" style={{ transform: 'scaleX(-1)' }} />
           <div>
             <div className="ganesha-mantra">॥ श्री गणेशाय नमः ॥</div>
             <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-maroon-dark)', letterSpacing: '1px' }}>
               !! Om Shree Ganeshay Namah !!
             </div>
           </div>
-          <img src="/assets/kalash.png" alt="Kalash" className="ganesha-icon-img" />
+          <img src="/assets/kalash_gold.svg" alt="Auspicious Kalash" className="ganesha-icon-img" />
         </div>
 
         <p className="ganesha-shlok-sub">

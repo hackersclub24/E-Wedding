@@ -846,9 +846,11 @@ body {
 }
 
 .ganesha-icon-img {
-  width: 48px;
+  width: 44px;
   height: auto;
-  filter: drop-shadow(0 2px 4px rgba(201, 151, 56, 0.3));
+  max-height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(201, 151, 56, 0.35));
 }
 
 .ganesha-mantra {
@@ -2118,7 +2120,9 @@ body {
 
   .ganesha-icon-img {
     width: 32px;
-    height: 32px;
+    height: auto;
+    max-height: 38px;
+    object-fit: contain;
   }
 
   .ganesha-shlok-sub {

@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 340" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Gold Foil Gradient -->
+    <linearGradient id="gold-pot" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#fff8db"/>
+      <stop offset="20%" stop-color="#f5d372"/>
+      <stop offset="45%" stop-color="#d49b28"/>
+      <stop offset="70%" stop-color="#8a5e12"/>
+      <stop offset="85%" stop-color="#e8be56"/>
+      <stop offset="100%" stop-color="#6e4605"/>
+    </linearGradient>
+
+    <!-- Deep Gold Accent -->
+    <linearGradient id="gold-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5d578"/>
+      <stop offset="50%" stop-color="#c99738"/>
+      <stop offset="100%" stop-color="#734d07"/>
+    </linearGradient>
+
+    <!-- Mango Leaves Gradient -->
+    <linearGradient id="leaf-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4d2"/>
+      <stop offset="35%" stop-color="#d8ab42"/>
+      <stop offset="75%" stop-color="#996e1a"/>
+      <stop offset="100%" stop-color="#5a3d05"/>
+    </linearGradient>
+
+    <!-- Coconut Gradient -->
+    <radialGradient id="coconut-gold" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#fff4cd"/>
+      <stop offset="35%" stop-color="#dfaa3e"/>
+      <stop offset="70%" stop-color="#966311"/>
+      <stop offset="100%" stop-color="#523204"/>
+    </radialGradient>
+
+    <!-- Royal Vermilion / Kumkum Maroon -->
+    <linearGradient id="kumkum-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8384f"/>
+      <stop offset="50%" stop-color="#b8142a"/>
+      <stop offset="100%" stop-color="#6e0513"/>
+    </linearGradient>
+
+    <!-- Soft Ambient Drop Shadow -->
+    <filter id="kalash-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#5a3205" flood-opacity="0.35"/>
+    </filter>
+
+    <filter id="inner-glow">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#ffffff" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#kalash-shadow)">
+    <!-- ==================== MANGO LEAVES (AMRA PATRA) ==================== -->
+    <!-- Far Left Leaf -->
+    <path d="M 120 120 C 70 100 40 70 30 50 C 45 75 75 105 130 115 Z" fill="url(#leaf-gold)" stroke="#7a5208" stroke-width="1.2"/>
+    <path d="M 120 120 Q 75 90 30 50" stroke="#fff9de" stroke-width="1" fill="none"/>
+
+    <!-- Mid Left Leaf -->
+    <path d="M 135 110 C 95 70 70 30 65 10 C 85 35 115 75 142 105 Z" fill="url(#leaf-gold)" stroke="#7a5208" stroke-width="1.2"/>
+    <path d="M 135 110 Q 95 60 65 10" stroke="#fff9de" stroke-width="1" fill="none"/>
+
+    <!-- Center Top Leaf -->
+    <path d="M 142 105 C 130 55 140 15 150 0 C 160 15 170 55 158 105 Z" fill="url(#leaf-gold)" stroke="#7a5208" stroke-width="1.2"/>
+    <path d="M 150 105 L 150 0" stroke="#fff9de" stroke-width="1" fill="none"/>
+
+    <!-- Mid Right Leaf -->
+    <path d="M 165 110 C 205 70 230 30 235 10 C 215 35 185 75 158 105 Z" fill="url(#leaf-gold)" stroke="#7a5208" stroke-width="1.2"/>
+    <path d="M 165 110 Q 205 60 235 10" stroke="#fff9de" stroke-width="1" fill="none"/>
+
+    <!-- Far Right Leaf -->
+    <path d="M 180 120 C 230 100 260 70 270 50 C 255 75 225 105 170 115 Z" fill="url(#leaf-gold)" stroke="#7a5208" stroke-width="1.2"/>
+    <path d="M 180 120 Q 225 90 270 50" stroke="#fff9de" stroke-width="1" fill="none"/>
+
+    <!-- ==================== SACRED COCONUT (SHRIPHAL) ==================== -->
+    <!-- Coconut Body -->
+    <path d="M 115 115 C 110 70 125 35 150 25 C 175 35 190 70 185 115 Z" fill="url(#coconut-gold)" stroke="#6e4605" stroke-width="1.5"/>
+    
+    <!-- Coconut Husk Point at Top -->
+    <polygon points="150,15 144,28 156,28" fill="#dfaa3e" stroke="#6e4605" stroke-width="1"/>
+    
+    <!-- Sacred Red Cloth / Ribbon across Coconut -->
+    <path d="M 124 82 Q 150 94 176 82" stroke="url(#kumkum-red)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 124 82 Q 150 94 176 82" stroke="#ffeb99" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+    <!-- Coconut Husk Texture Lines -->
+    <path d="M 135 45 Q 130 75 130 105" stroke="#7a4e08" stroke-width="1" fill="none" opacity="0.6"/>
+    <path d="M 165 45 Q 170 75 170 105" stroke="#7a4e08" stroke-width="1" fill="none" opacity="0.6"/>
+
+    <!-- ==================== SACRED POT (LOTA / KALASH) ==================== -->
+    <!-- Pot Neck Collar Rim -->
+    <ellipse cx="150" cy="120" rx="46" ry="10" fill="url(#gold-pot)" stroke="#6e4605" stroke-width="2"/>
+    <ellipse cx="150" cy="120" rx="40" ry="7" fill="url(#gold-dark)" opacity="0.7"/>
+
+    <!-- Sacred Red Mauli Thread Tied around Neck -->
+    <rect x="110" y="126" width="80" height="12" rx="4" fill="url(#kumkum-red)" stroke="#ffd700" stroke-width="1"/>
+    <line x1="110" y1="130" x2="190" y2="130" stroke="#ffd700" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="110" y1="134" x2="190" y2="134" stroke="#ffd700" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Pot Main Bulbous Body -->
+    <path d="M 116 138 
+             C 85 155 58 190 62 230 
+             C 66 270 105 295 150 295 
+             C 195 295 234 270 238 230 
+             C 242 190 215 155 184 138 Z" 
+          fill="url(#gold-pot)" stroke="#6e4605" stroke-width="2.5"/>
+
+    <!-- Pot Base Footing -->
+    <path d="M 112 292 Q 150 305 188 292 L 182 308 Q 150 318 118 308 Z" fill="url(#gold-dark)" stroke="#6e4605" stroke-width="1.8"/>
+
+    <!-- Specular Highlight Curve on Pot Shoulder -->
+    <path d="M 85 210 C 80 180 100 155 125 146" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.65" filter="blur(1px)"/>
+    <ellipse cx="100" cy="205" rx="10" ry="25" transform="rotate(-25 100 205)" fill="#ffffff" opacity="0.35"/>
+
+    <!-- Ornate Engraved Filigree Bands on Pot -->
+    <path d="M 72 215 Q 150 238 228 215" stroke="#734707" stroke-width="2" fill="none"/>
+    <path d="M 72 218 Q 150 241 228 218" stroke="#fff5cb" stroke-width="1" fill="none"/>
+
+    <path d="M 78 255 Q 150 275 222 255" stroke="#734707" stroke-width="2" fill="none"/>
+    <path d="M 78 258 Q 150 278 222 258" stroke="#fff5cb" stroke-width="1" fill="none"/>
+
+    <!-- Auspicious Dots (Bindus) in lower band -->
+    <circle cx="110" cy="261" r="2.5" fill="url(#kumkum-red)"/>
+    <circle cx="130" cy="265" r="2.5" fill="url(#kumkum-red)"/>
+    <circle cx="150" cy="266" r="3" fill="url(#kumkum-red)"/>
+    <circle cx="170" cy="265" r="2.5" fill="url(#kumkum-red)"/>
+    <circle cx="190" cy="261" r="2.5" fill="url(#kumkum-red)"/>
+
+    <!-- ==================== SACRED SWASTIKA EMBLEM ==================== -->
+    <g transform="translate(150, 205)">
+      <!-- Red Auspicious Swastika with Gold Trim -->
+      <!-- Vertical bar -->
+      <path d="M 0 -22 L 0 22" stroke="url(#kumkum-red)" stroke-width="5" stroke-linecap="square"/>
+      <!-- Top hook (points right) -->
+      <path d="M 0 -22 L 18 -22" stroke="url(#kumkum-red)" stroke-width="5" stroke-linecap="square"/>
+      <!-- Bottom hook (points left) -->
+      <path d="M 0 22 L -18 22" stroke="url(#kumkum-red)" stroke-width="5" stroke-linecap="square"/>
+
+      <!-- Horizontal bar -->
+      <path d="M -22 0 L 22 0" stroke="url(#kumkum-red)" stroke-width="5" stroke-linecap="square"/>
+      <!-- Left hook (points down) -->
+      <path d="M -22 0 L -22 -18" stroke="url(#kumkum-red)" stroke-width="5" stroke-linecap="square"/>
+      <!-- Right hook (points up) -->
+      <path d="M 22 0 L 22 18" stroke="url(#kumkum-red)" stroke-width="5" stroke-linecap="square"/>
+
+      <!-- Gold Centerlines -->
+      <path d="M 0 -20 L 0 20 M 0 -20 L 16 -20 M 0 20 L -16 20 M -20 0 L 20 0 M -20 0 L -20 -16 M 20 0 L 20 16" 
+            stroke="#fff2b2" stroke-width="1.2" fill="none"/>
+
+      <!-- Four Auspicious Bindus (Dots) in the quadrants -->
+      <circle cx="-11" cy="-11" r="2.8" fill="url(#kumkum-red)" stroke="#ffd700" stroke-width="0.8"/>
+      <circle cx="11" cy="-11" r="2.8" fill="url(#kumkum-red)" stroke="#ffd700" stroke-width="0.8"/>
+      <circle cx="-11" cy="11" r="2.8" fill="url(#kumkum-red)" stroke="#ffd700" stroke-width="0.8"/>
+      <circle cx="11" cy="11" r="2.8" fill="url(#kumkum-red)" stroke="#ffd700" stroke-width="0.8"/>
+    </g>
+  </g>
+</svg>

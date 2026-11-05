@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="100%" height="100%">
+  <defs>
+    <!-- Radiant Gold Gradient -->
+    <linearGradient id="ganesha-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="25%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#c99738"/>
+      <stop offset="100%" stop-color="#8b6508"/>
+    </linearGradient>
+
+    <!-- Kumkum Red Accent -->
+    <radialGradient id="tilak-red" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ff4d4d"/>
+      <stop offset="60%" stop-color="#b8142a"/>
+      <stop offset="100%" stop-color="#680e1b"/>
+    </radialGradient>
+
+    <filter id="ganesha-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#8c6418" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#ffffff" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#ganesha-glow)">
+    <!-- Aura Halo Behind Head -->
+    <circle cx="140" cy="130" r="85" fill="none" stroke="url(#ganesha-gold)" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.65"/>
+    <circle cx="140" cy="130" r="92" fill="none" stroke="url(#ganesha-gold)" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Crown / Mukut Base & Filigree -->
+    <path d="M 115 50 Q 140 25 165 50 L 158 35 Q 140 10 140 0 Q 140 10 122 35 Z" fill="url(#ganesha-gold)"/>
+    <!-- Mukut Jewels -->
+    <circle cx="140" cy="18" r="4.5" fill="url(#tilak-red)" stroke="#fff8dc" stroke-width="1"/>
+    <circle cx="132" cy="38" r="3" fill="#fff8dc"/>
+    <circle cx="140" cy="36" r="3.5" fill="url(#tilak-red)"/>
+    <circle cx="148" cy="38" r="3" fill="#fff8dc"/>
+
+    <!-- Crown Tier Base -->
+    <path d="M 108 52 Q 140 42 172 52 L 168 60 Q 140 50 112 60 Z" fill="url(#ganesha-gold)"/>
+
+    <!-- Head / Forehead Arch -->
+    <path d="M 98 75 C 95 62 115 62 140 62 C 165 62 185 62 182 75 C 180 85 170 95 155 98 C 145 100 135 100 125 98 C 110 95 100 85 98 75 Z" 
+          fill="url(#ganesha-gold)"/>
+
+    <!-- Red Sacred Tilak & Trishul on Forehead -->
+    <path d="M 140 66 L 140 88" stroke="url(#tilak-red)" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="140" cy="94" r="3.5" fill="url(#tilak-red)"/>
+    <path d="M 132 72 Q 140 76 148 72" stroke="url(#tilak-red)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Left Ear (Fan-shaped Royal Supakarna) -->
+    <path d="M 105 68 C 65 65 50 90 55 125 C 60 150 90 155 108 140 C 112 135 112 125 106 120 C 85 125 75 110 75 98 C 75 85 90 78 105 78 Z" 
+          fill="url(#ganesha-gold)"/>
+    <!-- Ear Inner Contour -->
+    <path d="M 80 92 Q 72 110 88 122" stroke="#fff8dc" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Right Ear -->
+    <path d="M 175 68 C 215 65 230 90 225 125 C 220 150 190 155 172 140 C 168 135 168 125 174 120 C 195 125 205 110 205 98 C 205 85 190 78 175 78 Z" 
+          fill="url(#ganesha-gold)"/>
+    <!-- Ear Inner Contour -->
+    <path d="M 200 92 Q 208 110 192 122" stroke="#fff8dc" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Eyes (Wise, Compassionate) -->
+    <path d="M 116 88 Q 124 84 130 90" stroke="#4a2e05" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 150 90 Q 156 84 164 88" stroke="#4a2e05" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Majestic Curved Trunk (Vakratunda) with Auspicious Left Turn -->
+    <path d="M 133 98 
+             C 130 135 120 165 110 195 
+             C 100 225 88 245 105 260 
+             C 122 275 160 268 175 240 
+             C 185 220 178 198 162 195 
+             C 150 192 142 202 145 212 
+             C 148 222 160 225 162 215 
+             C 162 230 145 242 128 238 
+             C 112 234 116 215 122 195 
+             C 134 165 146 135 147 98 Z" 
+          fill="url(#ganesha-gold)"/>
+
+    <!-- Tusk (Ekadanta on Right) -->
+    <path d="M 158 135 L 175 142 L 158 145 Z" fill="#ffffff" stroke="#c99738" stroke-width="1"/>
+    <!-- Broken Tusk on Left -->
+    <path d="M 122 135 L 114 139 L 122 142 Z" fill="#ffffff" stroke="#c99738" stroke-width="1"/>
+
+    <!-- Sacred Modak / Ladoo on Trunk Tip -->
+    <ellipse cx="152" cy="210" r="7" fill="url(#ganesha-gold)" stroke="#fff8dc" stroke-width="1.2"/>
+    <circle cx="152" cy="207" r="2" fill="url(#tilak-red)"/>
+
+    <!-- Trunk Decorative Tilak Lines -->
+    <path d="M 128 145 Q 138 148 148 145" stroke="url(#tilak-red)" stroke-width="2" fill="none"/>
+    <path d="M 124 165 Q 134 168 144 165" stroke="url(#tilak-red)" stroke-width="2" fill="none"/>
+    <path d="M 120 185 Q 128 188 138 185" stroke="url(#tilak-red)" stroke-width="2" fill="none"/>
+
+    <!-- Abhaya Mudra (Blessing Hand on Right) -->
+    <g transform="translate(182, 175)">
+      <path d="M 10 25 C 10 10 25 0 35 10 C 42 18 38 40 30 50 C 22 45 15 35 10 25 Z" fill="url(#ganesha-gold)"/>
+      <!-- Auspicious Lotus / Om on Palm -->
+      <circle cx="25" cy="24" r="5" fill="none" stroke="url(#tilak-red)" stroke-width="1.5"/>
+      <circle cx="25" cy="24" r="2" fill="url(#tilak-red)"/>
+    </g>
+
+    <!-- Seated Posture (Padmasana Lower Silhouette) -->
+    <path d="M 65 260 C 50 270 55 295 85 295 C 115 295 130 280 140 275 C 150 280 165 295 195 295 C 225 295 230 270 215 260 C 190 245 165 255 140 255 C 115 255 90 245 65 260 Z" 
+          fill="url(#ganesha-gold)" opacity="0.95"/>
+
+    <!-- Auspicious Little Mooshak (Divine Mouse Companion at Base) -->
+    <g transform="translate(68, 282) scale(0.65)">
+      <path d="M 15 15 Q 25 5 35 10 Q 42 15 40 22 Q 35 28 20 28 Q 10 26 15 15 Z" fill="url(#ganesha-gold)"/>
+      <!-- Tail -->
+      <path d="M 12 25 Q 0 25 2 12" stroke="url(#ganesha-gold)" stroke-width="2" fill="none"/>
+      <!-- Ears -->
+      <circle cx="34" cy="8" r="4" fill="url(#ganesha-gold)"/>
+      <!-- Modak in Paws -->
+      <circle cx="44" cy="18" r="3" fill="#ffd700"/>
+    </g>
+  </g>
+</svg>
