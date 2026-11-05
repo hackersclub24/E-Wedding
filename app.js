@@ -574,15 +574,100 @@ function initRSVP() {
 }
 
 /* ==========================================================================
-   9. SHARE TOOLS & PERSONALIZED LINK GENERATOR
+   9. SHARE TOOLS & PIN-PROTECTED HOST GENERATOR (PIN: 2026)
    ========================================================================== */
+const HOST_PIN = '2026';
+
 function initShareTools() {
+    const guestShareBar = document.getElementById('guest-share-bar');
+    const hostGenSection = document.getElementById('host-generator-section');
+    const openPinModalBtn = document.getElementById('btn-open-pin-modal');
+    const pinModal = document.getElementById('host-pin-modal');
+    const pinForm = document.getElementById('host-pin-form');
+    const pinInput = document.getElementById('host-pin-input');
+    const pinError = document.getElementById('host-pin-error');
+    const cancelPinBtn = document.getElementById('btn-cancel-pin');
+    const lockHostBtn = document.getElementById('btn-lock-host');
+
     const generateBtn = document.getElementById('btn-generate-guest-link');
     const customInput = document.getElementById('guest-name-custom-input');
     const resultBox = document.getElementById('generated-link-container');
     const copyBtn = document.getElementById('copy-guest-link-btn');
     const shareWABtn = document.getElementById('share-wa-guest-btn');
 
+    function unlockHost() {
+        if (guestShareBar) guestShareBar.style.display = 'none';
+        if (hostGenSection) hostGenSection.style.display = 'block';
+        if (pinModal) pinModal.style.display = 'none';
+        sessionStorage.setItem('host_unlocked', HOST_PIN);
+    }
+
+    function lockHost() {
+        if (hostGenSection) hostGenSection.style.display = 'none';
+        if (guestShareBar) guestShareBar.style.display = 'block';
+        sessionStorage.removeItem('host_unlocked');
+    }
+
+    // Check URL parameters ?host=2026 or ?admin=2026
+    const urlParams = new URLSearchParams(window.location.search);
+    const hostParam = urlParams.get('host');
+    const adminParam = urlParams.get('admin');
+
+    if (hostParam === HOST_PIN || adminParam === HOST_PIN || hostParam === 'true') {
+        unlockHost();
+    } else if (sessionStorage.getItem('host_unlocked') === HOST_PIN) {
+        unlockHost();
+    }
+
+    // Open PIN Modal
+    if (openPinModalBtn) {
+        openPinModalBtn.addEventListener('click', () => {
+            if (pinModal) pinModal.style.display = 'flex';
+            if (pinInput) {
+                pinInput.value = '';
+                pinInput.focus();
+            }
+            if (pinError) pinError.style.display = 'none';
+        });
+    }
+
+    // Close PIN Modal on Cancel
+    if (cancelPinBtn) {
+        cancelPinBtn.addEventListener('click', () => {
+            if (pinModal) pinModal.style.display = 'none';
+        });
+    }
+
+    // Close PIN Modal on Overlay Click
+    if (pinModal) {
+        pinModal.addEventListener('click', (e) => {
+            if (e.target === pinModal) {
+                pinModal.style.display = 'none';
+            }
+        });
+    }
+
+    // Submit PIN
+    if (pinForm) {
+        pinForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const entered = pinInput ? pinInput.value.trim() : '';
+            if (entered === HOST_PIN) {
+                unlockHost();
+            } else {
+                if (pinError) pinError.style.display = 'block';
+            }
+        });
+    }
+
+    // Lock Host Mode
+    if (lockHostBtn) {
+        lockHostBtn.addEventListener('click', () => {
+            lockHost();
+        });
+    }
+
+    // Generate Personalized Link
     if (generateBtn && customInput) {
         generateBtn.addEventListener('click', () => {
             const val = customInput.value.trim();
@@ -627,20 +712,22 @@ function initShareTools() {
         });
     }
 
-    // Direct WhatsApp share for the website
-    const directShareBtn = document.getElementById('direct-wa-share');
-    if (directShareBtn) {
-        directShareBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const url = window.location.href;
-            const text = encodeURIComponent(
-                `🌸 *Wedding Invitation: Aditya weds Ritika (#RitKaAdi)* 🌸\n\n` +
-                `You are cordially invited to celebrate our wedding on 17th & 21st November 2026!\n` +
-                `View interactive digital card, itinerary, and venue details:\n${url}`
-            );
-            window.open(`https://wa.me/?text=${text}`, '_blank');
-        });
-    }
+    // Direct WhatsApp share for the website (guests and hosts)
+    const directShareBtns = [document.getElementById('direct-wa-share'), document.getElementById('direct-wa-share-host')];
+    directShareBtns.forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = window.location.href;
+                const text = encodeURIComponent(
+                    `🌸 *Wedding Invitation: Aditya weds Ritika (#RitKaAdi)* 🌸\n\n` +
+                    `You are cordially invited to celebrate our wedding on 17th & 21st November 2026!\n` +
+                    `View interactive digital card, itinerary, and venue details:\n${url}`
+                );
+                window.open(`https://wa.me/?text=${text}`, '_blank');
+            });
+        }
+    });
 }
 
 /* ==========================================================================

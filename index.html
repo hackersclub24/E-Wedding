@@ -295,13 +295,20 @@
             </div>
 
             <div class="invitation-letter">
-                <div class="grandparent-portrait-container">
-                    <div class="grandparent-portrait-frame">
-                        <div class="grandparent-portrait-inner">
-                            <img src="assets/sumitra_devi.jpeg" alt="Sh. Sumitra Devi" class="grandparent-portrait-img">
-                        </div>
-                        <div class="grandparent-portrait-tag">Grandmother's Blessing</div>
-                    </div>
+                <div class="grandparent-portrait-container">
+
+                    <div class="grandparent-portrait-frame">
+
+                        <div class="grandparent-portrait-inner">
+
+                            <img src="assets/sumitra_devi.jpeg" alt="Sh. Sumitra Devi" class="grandparent-portrait-img">
+
+                        </div>
+
+                        <div class="grandparent-portrait-tag">Grandmother's Blessing</div>
+
+                    </div>
+
                 </div>
 
                 <div class="grandparents-blessing">
@@ -763,9 +770,31 @@
         </section>
 
         <!-- ================================================================
-             SECTION H: SHARE & PERSONALIZED LINK GENERATOR FOR HOST
+             SECTION H: SHARE & PIN-PROTECTED HOST GENERATOR
              ================================================================ -->
-        <section class="share-host-bar">
+        <!-- Guest Share Bar (Visible to everyone) -->
+        <div id="guest-share-bar" style="text-align: center; margin: 28px 0 16px 0;">
+            <div style="margin-bottom: 14px;">
+                <a href="#" id="direct-wa-share" class="btn-gold-royal" style="font-size: 0.9rem; padding: 10px 22px; display: inline-block;">
+                    📲 Share Wedding Card on WhatsApp
+                </a>
+            </div>
+            <button id="btn-open-pin-modal" style="background: none; border: none; color: rgba(104, 14, 27, 0.45); font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; padding: 4px 8px; border-radius: 4px;">
+                <span>🔒</span> Host / Family Access
+            </button>
+        </div>
+
+        <!-- Protected Host Section (Unlocked with PIN 2026 or ?host=2026) -->
+        <section id="host-generator-section" class="share-host-bar" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="background: linear-gradient(135deg, #ffd700, #c99738); color: #2e050b; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; letter-spacing: 1px; text-transform: uppercase;">
+                    👑 Host Mode Active (PIN: 2026)
+                </span>
+                <button id="btn-lock-host" style="background: none; border: none; color: var(--color-maroon); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+                    🔒 Lock Generator
+                </button>
+            </div>
+
             <h4 style="font-family: var(--font-royal); color: var(--color-maroon); font-size: 1.25rem; margin-bottom: 6px;">
                 Personalize & Share This Invitation
             </h4>
@@ -791,13 +820,35 @@
                 </div>
             </div>
 
-            <!-- Direct Quick Share -->
             <div class="share-buttons-row">
-                <a href="#" id="direct-wa-share" class="btn-gold-royal">
+                <a href="#" id="direct-wa-share-host" class="btn-gold-royal">
                     📲 Share Wedding Invite on WhatsApp
                 </a>
             </div>
         </section>
+
+        <!-- PIN Modal for Host Access -->
+        <div id="host-pin-modal" class="pin-modal-overlay" style="display: none;">
+            <div class="pin-modal-content">
+                <div style="font-size: 1.8rem; margin-bottom: 8px;">👑</div>
+                <h4 style="font-family: var(--font-royal); color: var(--color-maroon); font-size: 1.25rem; margin-bottom: 6px;">
+                    Host & Family Access
+                </h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                    Enter the 4-digit PIN to access the guest invitation generator.
+                </p>
+                <form id="host-pin-form">
+                    <input type="password" id="host-pin-input" maxlength="4" placeholder="PIN" class="form-input" style="text-align: center; font-size: 1.3rem; letter-spacing: 6px; max-width: 160px; margin: 0 auto 10px auto;">
+                    <div id="host-pin-error" style="color: #b8142a; font-size: 0.82rem; margin-bottom: 10px; font-weight: 600; display: none;">
+                        Incorrect PIN. Please try again.
+                    </div>
+                    <div style="display: flex; gap: 8px; justify-content: center;">
+                        <button type="submit" class="btn-primary-royal" style="padding: 8px 22px;">Unlock</button>
+                        <button type="button" id="btn-cancel-pin" class="btn-gold-royal" style="padding: 8px 16px;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </main>
 

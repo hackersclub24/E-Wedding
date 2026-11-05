@@ -3027,3 +3027,32 @@ body {
   border: 1px solid var(--color-gold);
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   HOST ACCESS PIN MODAL STYLES
+   ========================================================================== */
+.pin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 5, 11, 0.72);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+.pin-modal-content {
+  background: radial-gradient(circle at top, #fffdf8 0%, #fff7ea 100%);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(201, 151, 56, 0.35);
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
