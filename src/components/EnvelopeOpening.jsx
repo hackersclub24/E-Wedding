@@ -198,18 +198,19 @@ export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
             </div>
           </div>
         )}
-
-        {/* Quick Skip Button if guest wants immediate access */}
-        {phase === 'closed' && (
-          <button
-            type="button"
-            className="splash-skip-button"
-            onClick={handleSkip}
-          >
-            Enter Site →
-          </button>
-        )}
       </div>
+
+      {/* Quick Skip Button positioned cleanly at top-right of the screen */}
+      {phase === 'closed' && (
+        <button
+          type="button"
+          className="splash-skip-button"
+          onClick={handleSkip}
+          aria-label="Skip to main invitation"
+        >
+          Enter Site →
+        </button>
+      )}
     </div>
   );
 }
