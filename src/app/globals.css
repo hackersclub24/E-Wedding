@@ -82,17 +82,26 @@ body {
 /* ==========================================================================
    THE LUXURY 3D ENVELOPE SPLASH SCREEN EXPERIENCE (MATCHING VIRAL VIDEO)
    ========================================================================== */
+/* ==========================================================================
+   ROYAL ENVELOPE OPENING & WEDDING CARD PRESENTATION EXPERIENCE
+   ========================================================================== */
+/* ==========================================================================
+   ROYAL ENVELOPE OPENING - SMOOTH TRANSITION TO SITE (NO MIDDLE CARD)
+   ========================================================================== */
+/* ==========================================================================
+   ROYAL ENVELOPE OPENING - SLOW CARD SLIDE & SEAMLESS TRANSITION
+   ========================================================================== */
 .splash-overlay {
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   z-index: 9999;
   background: radial-gradient(circle at center, #240c11 0%, #0d0305 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 16px;
   transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s ease;
   overflow: hidden;
 }
@@ -110,94 +119,80 @@ body {
   transform: translate(-50%, -50%);
   width: 600px;
   height: 800px;
-  background: radial-gradient(circle, rgba(212, 163, 62, 0.18) 0%, rgba(247, 232, 228, 0.04) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(212, 163, 62, 0.22) 0%, rgba(247, 232, 228, 0.05) 50%, transparent 75%);
   pointer-events: none;
   z-index: 0;
 }
 
+/* --------------------------------------------------------------------------
+   The Royal Wax-Sealed Envelope
+   -------------------------------------------------------------------------- */
 .splash-envelope-phone-canvas {
   position: relative;
-  width: 100%;
-  max-width: 400px;
-  height: min(600px, 85vh);
+  width: min(88vw, 350px);
+  height: min(480px, 68dvh);
   background-color: #f7e8e4;
   overflow: visible;
   perspective: 1600px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65), 0 0 50px rgba(201, 151, 56, 0.25);
-  cursor: pointer;
-  z-index: 1;
-  transition: transform 0.6s ease;
-  border-radius: 28px;
+  border-radius: 20px;
   border: 1.5px solid rgba(243, 223, 149, 0.45);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 35px rgba(201, 151, 56, 0.25);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
 }
 
 @media (min-width: 481px) {
   .splash-envelope-phone-canvas {
-    border-radius: 28px;
-    height: min(600px, 85vh);
-    border: 1.5px solid rgba(243, 223, 149, 0.45);
+    width: 380px;
+    height: 520px;
+    border-radius: 24px;
   }
 }
 
-/* ==========================================================================
-   LAYER 1: INTERIOR CHAMBER & SLIDING WEDDING CARD
-   ========================================================================== */
-.envelope-interior-chamber {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: visible;
-  border-radius: inherit;
-}
-
+/* Layer 0: Gold Foil Backing inside the envelope cavity */
 .envelope-interior-backing {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   border-radius: inherit;
   background: linear-gradient(180deg, #996e1f 0%, #ecd077 22%, #a87922 55%, #3d2305 100%);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.45);
+  z-index: 0;
 }
 
+/* Layer 2: The Rising Wedding Card (Tucked inside, slides up slowly on open) */
 .envelope-sliding-card {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
   background: linear-gradient(180deg, #fffcf7 0%, #fff7f0 50%, #faeee5 100%);
   border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   border: 1.5px solid rgba(201, 151, 56, 0.45);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px 12px 14px;
+  padding: 8px 12px 10px 12px;
   text-align: center;
   overflow: hidden;
-  transform: translateY(0%) scale(0.98);
-  transition: transform 1.5s cubic-bezier(0.18, 0.89, 0.32, 1.05);
   z-index: 2;
+  transform: translateY(8%) scale(0.98);
+  transition: transform 1.8s cubic-bezier(0.18, 0.89, 0.32, 1.05);
 }
 
 .splash-envelope-phone-canvas.is-opening .envelope-sliding-card {
-  transform: translateY(0%) scale(0.99);
+  transform: translateY(-15%) scale(1.01);
 }
 
-.splash-envelope-phone-canvas.is-revealed .envelope-sliding-card {
-  transform: translateY(-26%) scale(1.02);
-}
-
-/* Card Content Elements */
+/* Card Typography & Internal Elements */
 .card-palace-arch-wrapper {
   width: 100%;
   max-width: 320px;
-  height: 60px;
-  margin-top: -4px;
+  height: 48px;
+  margin-top: -2px;
 }
 
 .card-palace-arch-img {
@@ -208,7 +203,7 @@ body {
 
 .card-shree-ganesh {
   font-family: var(--font-royal);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   letter-spacing: 2px;
   color: #8c6418;
   margin-top: -2px;
@@ -220,22 +215,22 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1px;
-  margin: 3px 0;
+  margin: 2px 0;
 }
 
 .card-name {
   font-family: var(--font-royal);
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #3b161c;
-  letter-spacing: 4px;
+  letter-spacing: 3.5px;
   line-height: 1.1;
   text-shadow: 0 1px 2px rgba(201, 151, 56, 0.3);
 }
 
 .card-ampersand {
   font-family: var(--font-script);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #c99738;
   line-height: 0.9;
   margin: -2px 0;
@@ -256,7 +251,7 @@ body {
 
 .card-badge-text {
   font-family: var(--font-royal);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 3px;
   color: #7a5015;
   font-weight: 700;
@@ -265,7 +260,7 @@ body {
 
 .card-save-date {
   font-family: var(--font-royal);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 2.5px;
   color: #8c6418;
   font-weight: 600;
@@ -273,15 +268,15 @@ body {
 }
 
 .card-ghibli-frame-container {
-  margin: 4px 0;
+  margin: 3px 0;
 }
 
 .card-ghibli-frame {
-  width: 95px;
-  height: 125px;
-  border-radius: 48px 48px 12px 12px;
+  width: 88px;
+  height: 115px;
+  border-radius: 44px 44px 10px 10px;
   overflow: hidden;
-  border: 2.5px solid #d4af37;
+  border: 2px solid #d4af37;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 0 12px rgba(255, 215, 0, 0.4);
   background: #fbf5f0;
 }
@@ -295,16 +290,16 @@ body {
 
 .card-wedding-date-proclamation {
   font-family: var(--font-royal);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #680e1b;
   letter-spacing: 1.5px;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .card-hashtag {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #c99738;
   font-weight: 700;
   letter-spacing: 1px;
@@ -314,13 +309,13 @@ body {
   background: rgba(201, 151, 56, 0.08);
   border: 1px dashed rgba(201, 151, 56, 0.35);
   border-radius: 8px;
-  padding: 4px 12px;
-  margin: 3px 0;
+  padding: 3px 10px;
+  margin: 2px 0;
   width: 85%;
 }
 
 .card-guest-prefix {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #8c6418;
@@ -328,7 +323,7 @@ body {
 
 .card-guest-name {
   font-family: var(--font-script);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #680e1b;
   font-weight: 600;
   line-height: 1.1;
@@ -337,8 +332,8 @@ body {
 .card-palace-bottom-wrapper {
   width: 100%;
   max-width: 320px;
-  height: 60px;
-  margin-bottom: -4px;
+  height: 48px;
+  margin-bottom: -2px;
 }
 
 .card-palace-bottom-img {
@@ -347,87 +342,57 @@ body {
   object-fit: contain;
 }
 
-/* ==========================================================================
-   LAYER 2: ENVELOPE POCKET (EMBOSSED BOTANICAL PAPER & FOLDS)
-   ========================================================================== */
-.envelope-pocket-housing {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-.envelope-embossed-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background-color: #f7e8e4;
-  background-image: url('/assets/envelope_embossed_paper.svg');
-  background-size: cover;
-  background-position: center;
-  /* Pocket covers all sides and bottom, gentle V-notch in center at 42% */
-  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% 42%);
-  filter: drop-shadow(0 -4px 14px rgba(90, 45, 40, 0.22));
-}
-
-.envelope-side-flap-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  clip-path: polygon(0 0, 100% 42%, 0 100%);
-  background: linear-gradient(90deg, rgba(215, 180, 172, 0.35), transparent);
-  pointer-events: none;
-}
-
-.envelope-side-flap-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  clip-path: polygon(100% 0, 0 42%, 100% 100%);
-  background: linear-gradient(-90deg, rgba(215, 180, 172, 0.35), transparent);
-  pointer-events: none;
-}
-
-.envelope-bottom-flap {
+/* Layer 3: Front Pocket (Keeps bottom half of card inside) */
+.envelope-pocket-front {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 58%;
-  clip-path: polygon(0 100%, 50% 12%, 100% 100%);
-  background: linear-gradient(0deg, rgba(220, 185, 178, 0.28), transparent);
-  box-shadow: 0 -4px 15px rgba(110, 60, 55, 0.15);
+  height: 52%;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  z-index: 3;
   pointer-events: none;
 }
 
-/* ==========================================================================
-   LAYER 3: 3D HINGED TOP FLAP WITH METALLIC GOLD FOIL LINING & WAX SEAL
-   ========================================================================== */
+.envelope-pocket-texture {
+  position: absolute;
+  inset: 0;
+  background-color: #f7e8e4;
+  background-image: url('/assets/envelope_embossed_paper.svg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 -4px 15px rgba(90, 45, 40, 0.18);
+}
+
+.envelope-pocket-gold-rim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c99738 20%, #f7df95 50%, #c99738 80%, transparent);
+  box-shadow: 0 2px 8px rgba(201, 151, 56, 0.4);
+}
+
+/* Layer 5: Top 3D Flap */
 .envelope-top-flap-3d {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 44%;
+  height: 52%;
   z-index: 5;
   transform-origin: top center;
   transform-style: preserve-3d;
-  transition: transform 1.25s cubic-bezier(0.35, 0.95, 0.45, 1);
+  transition: transform 0.75s cubic-bezier(0.35, 0.95, 0.45, 1);
   pointer-events: none;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .envelope-top-flap-3d.flap-flipped {
   transform: rotateX(180deg);
-  z-index: 1; /* Opened flap hinges backwards behind the rising card (z-index: 2) */
+  z-index: 1;
 }
 
 .flap-face {
@@ -437,7 +402,6 @@ body {
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .flap-front {
@@ -448,21 +412,9 @@ body {
 .flap-front-embossed-bg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   background-image: url('/assets/envelope_embossed_paper.svg');
   background-size: cover;
   background-position: top center;
-}
-
-.flap-v-shadow {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 10px 16px rgba(100, 50, 45, 0.35));
-  pointer-events: none;
 }
 
 .flap-back {
@@ -475,8 +427,6 @@ body {
 .flap-gold-foil-bg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   background: repeating-linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.15) 0px,
@@ -486,44 +436,22 @@ body {
   );
 }
 
-.flap-gold-shimmer {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  animation: goldShimmer 3s infinite linear;
-}
-
-@keyframes goldShimmer {
-  0% { transform: translateX(-150%) skewX(-25deg); }
-  100% { transform: translateX(250%) skewX(-25deg); }
-}
-
-/* ==========================================================================
-   THE 3D CONVEX GOLD WAX SEAL
-   ========================================================================== */
+/* Layer 10: Wax Seal */
 .wax-seal-component {
   position: absolute;
+  top: 50%;
   left: 50%;
-  bottom: -62px;
-  transform: translateX(-50%);
-  width: 125px;
-  height: 125px;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
   z-index: 10;
-  pointer-events: auto;
   cursor: pointer;
-  transition: transform 1.25s cubic-bezier(0.35, 0.95, 0.45, 1), opacity 0.5s ease;
+  transition: transform 0.45s ease, opacity 0.4s ease;
 }
 
 .wax-seal-component.seal-lifted {
-  transform: translateX(-50%) translateY(-25px) scale(0.95);
+  transform: translate(-50%, -75px) scale(1.15);
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -560,32 +488,34 @@ body {
   filter: drop-shadow(0 8px 18px rgba(70, 35, 10, 0.5));
 }
 
-/* Tap Hint Banner */
+/* Tap Hint */
 .envelope-tap-instruction {
   position: absolute;
-  bottom: 30px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
   pointer-events: none;
+  width: max-content;
 }
 
 .tap-pill {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(201, 151, 56, 0.5);
   padding: 8px 18px;
   border-radius: 24px;
   color: #680e1b;
   font-family: var(--font-royal);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   display: flex;
   align-items: center;
   gap: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 0 0 15px rgba(255, 215, 0, 0.3);
   animation: floatTapPill 2.2s infinite ease-in-out;
+  white-space: nowrap !important;
 }
 
 @keyframes floatTapPill {
@@ -597,10 +527,11 @@ body {
   font-size: 1rem;
 }
 
+/* Always-Accessible Quick Skip Button */
 .splash-skip-button {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 18px;
   z-index: 10005;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(8px);
@@ -608,7 +539,7 @@ body {
   border-radius: 20px;
   padding: 6px 14px;
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
   color: #680e1b;
   cursor: pointer;
@@ -621,6 +552,9 @@ body {
   border-color: #c99738;
   transform: translateY(-1px);
 }
+
+
+
 
 /* ==========================================================================
    NAVIGATION & FLOATING AUDIO CONTROLLER
@@ -2633,41 +2567,18 @@ body {
 @media (max-width: 480px) {
   /* Splash Screen / Authentic Centered Royal Envelope on Phones */
   .splash-overlay {
-    padding: 24px 12px 20px 12px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    padding: 16px 10px !important;
   }
 
   .splash-envelope-phone-canvas {
     width: min(88vw, 340px) !important;
-    max-width: 340px !important;
-    height: min(520px, 72dvh) !important;
-    max-height: 540px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 35px rgba(201, 151, 56, 0.35) !important;
-    border: 1.5px solid rgba(243, 223, 149, 0.45) !important;
-    overflow: visible !important;
-  }
-
-  .envelope-sliding-card {
-    top: 10px !important;
-    bottom: 10px !important;
-    left: 10px !important;
-    right: 10px !important;
-    padding: 8px 8px 10px 8px !important;
-    border-radius: 16px !important;
-    transform: translateY(0%) scale(0.98) !important;
-  }
-
-  .splash-envelope-phone-canvas.is-revealed .envelope-sliding-card {
-    transform: translateY(-20%) scale(1.02) !important;
+    height: min(470px, 68dvh) !important;
+    border-radius: 18px !important;
   }
 
   .tap-pill {
     padding: 7px 16px !important;
     font-size: 0.72rem !important;
-    letter-spacing: 0.8px !important;
     white-space: nowrap !important;
   }
 

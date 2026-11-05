@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
 export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
-  // phases: 'closed' | 'opening' | 'revealed' | 'opened'
+  // phases: 'closed' | 'opening' | 'opened'
   const [phase, setPhase] = useState(isOpen ? 'opened' : 'closed');
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
     // Confetti shower with gold, rose, and royal maroon
     try {
       confetti({
-        particleCount: 60,
-        spread: 70,
+        particleCount: 70,
+        spread: 80,
         origin: { y: 0.5 },
         colors: ['#ffd700', '#c99738', '#f8d0c8', '#680e1b', '#ffffff']
       });
@@ -34,19 +34,15 @@ export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
       onOpen();
     }
 
-    // Sequence the flap flip and card slide-out
-    setTimeout(() => {
-      setPhase('revealed');
-    }, 600);
-
+    // Allow card to slowly and gracefully slide up (1.8s), then smoothly transition into site
     setTimeout(() => {
       setPhase('opened');
-    }, 2800);
+    }, 2400);
   };
 
-  // If fully opened and closed, allow quick dismiss or skip
+  // Immediate skip to main site
   const handleSkip = (e) => {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
     if (onOpen) onOpen();
     setPhase('opened');
   };
@@ -59,136 +55,106 @@ export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
       {/* Background ambient lighting */}
       <div className="splash-ambient-glow"></div>
 
-      {/* Main Envelope Experience Container */}
+      {/* The Royal Envelope Experience */}
       <div
-        className={`splash-envelope-phone-canvas ${phase !== 'closed' ? 'is-opening' : ''} ${phase === 'revealed' || phase === 'opened' ? 'is-revealed' : ''}`}
+        className={`splash-envelope-phone-canvas ${phase === 'opening' ? 'is-opening' : ''}`}
         onClick={phase === 'closed' ? handleOpen : undefined}
       >
-        {/* =========================================================
-            LAYER 1: The Inside Cavity & The Rising Wedding Card
-            ========================================================= */}
-        <div className="envelope-interior-chamber">
-          {/* Deep gold foil lining inside the envelope backing */}
-          <div className="envelope-interior-backing"></div>
+        {/* Layer 0: Backing with metallic gold foil */}
+        <div className="envelope-interior-backing"></div>
 
-          {/* The Luxury Wedding Card (Slides up out of the envelope) */}
-          <div className="envelope-sliding-card">
-            {/* Scalloped Palace Arch & Hanging Bells */}
-            <div className="card-palace-arch-wrapper">
+        {/* Layer 2: The Rising Wedding Card (Slides up slowly from inside) */}
+        <div className="envelope-sliding-card">
+          {/* Scalloped Palace Arch & Hanging Bells */}
+          <div className="card-palace-arch-wrapper">
+            <img
+              src="/assets/palace_arch_bells.svg"
+              alt="Palace Arch & Temple Bells"
+              className="card-palace-arch-img"
+            />
+          </div>
+
+          {/* Sacred Invocation */}
+          <div className="card-shree-ganesh">॥ श्री गणेशाय नमः ॥</div>
+
+          {/* Couple Names */}
+          <div className="card-names-block">
+            <span className="card-name">ADITYA</span>
+            <span className="card-ampersand">&amp;</span>
+            <span className="card-name">RITIKA</span>
+          </div>
+
+          {/* Sub-proclamation */}
+          <div className="card-event-badge">
+            <span className="card-badge-line"></span>
+            <span className="card-badge-text">SHUBH VIVAH</span>
+            <span className="card-badge-line"></span>
+          </div>
+
+          {/* Ghibli Couple Portrait Centerpiece in Archway */}
+          <div className="card-ghibli-frame-container">
+            <div className="card-ghibli-frame">
               <img
-                src="/assets/palace_arch_bells.svg"
-                alt="Palace Arch & Temple Bells"
-                className="card-palace-arch-img"
-              />
-            </div>
-
-            {/* Sacred Invocation */}
-            <div className="card-shree-ganesh">॥ श्री गणेशाय नमः ॥</div>
-
-            {/* Couple Names matching video typography */}
-            <div className="card-names-block">
-              <span className="card-name">ADITYA</span>
-              <span className="card-ampersand">&amp;</span>
-              <span className="card-name">RITIKA</span>
-            </div>
-
-            {/* Sub-proclamation */}
-            <div className="card-event-badge">
-              <span className="card-badge-line"></span>
-              <span className="card-badge-text">WEDDING DAY</span>
-              <span className="card-badge-line"></span>
-            </div>
-            <div className="card-save-date">• SAVE THE DATE •</div>
-
-            {/* Ghibli Couple Portrait Centerpiece in Archway */}
-            <div className="card-ghibli-frame-container">
-              <div className="card-ghibli-frame">
-                <img
-                  src="/assets/ghibli_couple.jpg"
-                  alt="Aditya & Ritika"
-                  className="card-ghibli-img"
-                />
-              </div>
-            </div>
-
-            {/* Wedding Date */}
-            <div className="card-wedding-date-proclamation">
-              Saturday, 21st November 2026
-            </div>
-            <div className="card-hashtag">#RitKaAdi</div>
-
-            {/* Personalized Guest Honor */}
-            <div className="card-guest-greeting">
-              <div className="card-guest-prefix">Cordially Invited</div>
-              <div className="card-guest-name">
-                {guestName || 'Respected Family & Friends'}
-              </div>
-            </div>
-
-            {/* Bottom Palace Domes, Perched Peacocks & Ceremonial Elephant */}
-            <div className="card-palace-bottom-wrapper">
-              <img
-                src="/assets/palace_bottom_decor.svg"
-                alt="Palace Terrace, Peacocks & Royal Elephant"
-                className="card-palace-bottom-img"
+                src="/assets/ghibli_couple.jpg"
+                alt="Aditya & Ritika"
+                className="card-ghibli-img"
               />
             </div>
           </div>
+
+          <div className="card-hashtag">#RitKaAdi</div>
+
+          {/* Personalized Guest Honor */}
+          <div className="card-guest-greeting">
+            <div className="card-guest-prefix">Cordially Invited</div>
+            <div className="card-guest-name">
+              {guestName || 'Respected Family & Friends'}
+            </div>
+          </div>
+
+          {/* Bottom Palace Domes, Peacocks & Ceremonial Elephant */}
+          <div className="card-palace-bottom-wrapper">
+            <img
+              src="/assets/palace_bottom_decor.svg"
+              alt="Palace Terrace & Royal Elephant"
+              className="card-palace-bottom-img"
+            />
+          </div>
         </div>
 
-        {/* =========================================================
-            LAYER 2: The Envelope Pocket (Sides & Bottom Flaps)
-            ========================================================= */}
-        <div className="envelope-pocket-housing">
-          {/* 3D Embossed Botanical Paper Surface */}
-          <div className="envelope-embossed-bg"></div>
-
-          {/* Left Flap fold seam */}
-          <div className="envelope-side-flap-left"></div>
-
-          {/* Right Flap fold seam */}
-          <div className="envelope-side-flap-right"></div>
-
-          {/* Bottom Flap fold seam */}
-          <div className="envelope-bottom-flap"></div>
+        {/* Layer 3: Front Pocket (Keeps bottom of card nestled inside) */}
+        <div className="envelope-pocket-front">
+          <div className="envelope-pocket-texture"></div>
+          <div className="envelope-pocket-gold-rim"></div>
         </div>
 
-        {/* =========================================================
-            LAYER 3: The 3D Hinged Top Flap with Gold Wax Seal
-            ========================================================= */}
-        <div className={`envelope-top-flap-3d ${phase !== 'closed' ? 'flap-flipped' : ''}`}>
-          {/* Front Face: Embossed Blush Pink Paper */}
+        {/* Layer 5: 3D Hinged Top Flap */}
+        <div className={`envelope-top-flap-3d ${phase === 'opening' ? 'flap-flipped' : ''}`}>
           <div className="flap-face flap-front">
             <div className="flap-front-embossed-bg"></div>
-            <div className="flap-v-shadow"></div>
           </div>
-
-          {/* Back Face: Gleaming Metallic Gold Foil (revealed when flipped 180deg) */}
           <div className="flap-face flap-back">
             <div className="flap-gold-foil-bg"></div>
-            <div className="flap-gold-shimmer"></div>
-          </div>
-
-          {/* Center 3D Gold Wax Seal (Attached to the flap tip) */}
-          <div
-            className={`wax-seal-component ${phase !== 'closed' ? 'seal-lifted' : ''}`}
-            title="Tap Wax Seal to Open Invitation"
-          >
-            {/* Ambient golden pulse ring */}
-            <div className="wax-seal-pulse-halo"></div>
-
-            {/* 3D Gold Wax Seal SVG */}
-            <div className="wax-seal-disc">
-              <img
-                src="/assets/gold_wax_seal.svg"
-                alt="Aditya & Ritika Gold Wax Seal"
-                className="wax-seal-svg-img"
-              />
-            </div>
           </div>
         </div>
 
-        {/* Tap to open invitation prompt */}
+        {/* Layer 10: 3D Gold Wax Seal (at center apex) */}
+        <div
+          className={`wax-seal-component ${phase === 'opening' ? 'seal-lifted' : ''}`}
+          onClick={phase === 'closed' ? handleOpen : undefined}
+          title="Tap Wax Seal to Open Invitation"
+        >
+          <div className="wax-seal-pulse-halo"></div>
+          <div className="wax-seal-disc">
+            <img
+              src="/assets/gold_wax_seal.svg"
+              alt="Aditya & Ritika Gold Wax Seal"
+              className="wax-seal-svg-img"
+            />
+          </div>
+        </div>
+
+        {/* Tap Prompt */}
         {phase === 'closed' && (
           <div className="envelope-tap-instruction">
             <div className="tap-pill">
@@ -200,8 +166,8 @@ export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
         )}
       </div>
 
-      {/* Quick Skip Button positioned cleanly at top-right of the screen */}
-      {phase === 'closed' && (
+      {/* Quick Skip Button at top-right */}
+      {phase !== 'opened' && (
         <button
           type="button"
           className="splash-skip-button"
