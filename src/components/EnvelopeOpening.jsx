@@ -111,15 +111,6 @@ export default function EnvelopeOpening({ guestName, isOpen, onOpen }) {
               {guestName || 'Respected Family & Friends'}
             </div>
           </div>
-
-          {/* Bottom Palace Domes, Peacocks & Ceremonial Elephant */}
-          <div className="card-palace-bottom-wrapper">
-            <img
-              src="/assets/palace_bottom_decor.svg"
-              alt="Palace Terrace & Royal Elephant"
-              className="card-palace-bottom-img"
-            />
-          </div>
         </div>
 
         {/* Layer 3: Front Pocket (Keeps bottom of card nestled inside) */}
