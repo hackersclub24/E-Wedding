@@ -1312,24 +1312,32 @@ body {
 .event-card-header {
   background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%);
   color: #ffffff;
-  padding: 22px 20px;
+  padding: 22px 20px 20px 20px;
   text-align: center;
   position: relative;
   border-bottom: 2px solid var(--color-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .event-badge {
-  position: absolute;
-  top: 12px;
-  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
   background: var(--gold-gradient);
   color: var(--color-maroon-dark);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 3px 12px;
   border-radius: var(--radius-full);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2px;
 }
 
 .event-date-pill {
@@ -2375,7 +2383,31 @@ body {
   }
 
   .event-card-header {
-    padding: 16px 14px;
+    padding: 16px 12px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-badge {
+    position: static;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    margin-bottom: 1px;
+  }
+
+  .event-date-pill {
+    font-size: 0.76rem;
+    letter-spacing: 0.8px;
+    line-height: 1.35;
+    padding: 0 4px;
+    white-space: normal;
+  }
+
+  .event-title-main {
+    font-size: 1.3rem;
+    line-height: 1.25;
   }
 
   .event-card-body {
